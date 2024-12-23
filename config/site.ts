@@ -1,5 +1,3 @@
-import { Achievements } from "@/components/achievements";
-
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
@@ -76,9 +74,10 @@ export const siteConfig = {
   },
   footer: {
     aboutTitle: "About me",
-    aboutText: "I am a professional consultant offering personalized guidance to help you achieve your goals.",
+    aboutText:
+      "I am a professional consultant offering personalized guidance to help you achieve your goals.",
     services: "Services",
     connect: "Connect with me",
-    copyrights: "Individual Consultation Project. All rights reserved."
-  }
+    copyrights: "Individual Consultation Project. All rights reserved.",
+  },
 };

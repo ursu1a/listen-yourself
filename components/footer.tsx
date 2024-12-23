@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import { Link } from "@nextui-org/link";
+
 import { FBIcon, InIcon, InstIcon, TwIcon } from "@/components/icons";
 import { subtitle } from "@/components/primitives";
 import { siteConfig } from "@/config/site";
@@ -25,7 +26,7 @@ export const Footer = () => {
         url: "/",
       },
     ],
-    []
+    [],
   );
 
   const socialLinks = useMemo(
@@ -47,7 +48,7 @@ export const Footer = () => {
         url: "/",
       },
     ],
-    []
+    [],
   );
 
   return (
@@ -68,8 +69,8 @@ export const Footer = () => {
               {servicesLinks.map((service, index) => (
                 <Link
                   key={`${service.url}-${index}`}
-                  href={service.url}
                   className="text-current"
+                  href={service.url}
                 >
                   {service.title}
                 </Link>
@@ -82,7 +83,7 @@ export const Footer = () => {
             </p>
             <div className="flex items-center gap-x-6">
               {socialLinks.map(({ icon: Icon, url }, index) => (
-                <Link key={`${url}-${index}`} href={url} className="py-1">
+                <Link key={`${url}-${index}`} className="py-1" href={url}>
                   <Icon />
                 </Link>
               ))}
