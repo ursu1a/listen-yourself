@@ -14,7 +14,6 @@ import { Input } from "@nextui-org/input";
 import { link as linkStyles } from "@nextui-org/theme";
 import NextLink from "next/link";
 import clsx from "clsx";
-import Image from "next/image";
 
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
@@ -24,8 +23,8 @@ import {
   DiscordIcon,
   HeartFilledIcon,
   SearchIcon,
+  LogoIcon,
 } from "@/components/icons";
-import Logo from "@/public/Logo.png";
 
 export const Navbar = () => {
   const searchInput = (
@@ -50,16 +49,11 @@ export const Navbar = () => {
   );
 
   return (
-    <NextUINavbar maxWidth="xl" position="sticky">
+    <NextUINavbar maxWidth="full" position="sticky">
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-1" href="/">
-            <Image
-              src={Logo}
-              alt="Logo"
-              width={70}
-              height={70}
-            />
+            <LogoIcon size={55} />
           </NextLink>
         </NavbarBrand>
         <ul className="hidden lg:flex gap-4 justify-start ml-2">
