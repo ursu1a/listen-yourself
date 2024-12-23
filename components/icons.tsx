@@ -165,15 +165,15 @@ export const LogoIcon = ({
   ...props
 }: IconSvgProps) => (
   <svg
-    viewBox="0 0 24 24"
     aria-hidden="true"
     focusable="false"
-    role="presentation"
-    width={size || width}
     height={size || height}
+    role="presentation"
+    viewBox="0 0 24 24"
+    width={size || width}
     {...props}
   >
-    <g width="100%" height="100%" transform="matrix(1,0,0,1,0,0)">
+    <g height="100%" transform="matrix(1,0,0,1,0,0)" width="100%">
       <path
         d="m18,0H6c-1.654,0-3,1.346-3,3v21h18V3c0-1.654-1.346-3-3-3Zm-4,15c-.558,0-1.062-.229-1.425-.597.296,1.005.745,1.917,1.425,2.597h-4c.68-.68,1.129-1.592,1.425-2.597-.363.368-.867.597-1.425.597-1.105,0-2-.895-2-2,0-2.333,4-5,4-5,0,0,4,2.667,4,5,0,1.105-.895,2-2,2Z"
         fill="currentColor"
@@ -234,13 +234,18 @@ export const SearchIcon = (props: IconSvgProps) => (
   </svg>
 );
 
-export const FBIcon = ({size=18, width, height, ...props}: IconSvgProps) => (
+export const FBIcon = ({
+  size = 18,
+  width,
+  height,
+  ...props
+}: IconSvgProps) => (
   <svg
     aria-hidden="true"
     fill="none"
-    width={size || width}
     height={size || height}
     viewBox="0 0 10 16"
+    width={size || width}
     {...props}
   >
     <path
@@ -250,13 +255,18 @@ export const FBIcon = ({size=18, width, height, ...props}: IconSvgProps) => (
   </svg>
 );
 
-export const TwIcon = ({size=20, width, height, ...props}: IconSvgProps) => (
+export const TwIcon = ({
+  size = 20,
+  width,
+  height,
+  ...props
+}: IconSvgProps) => (
   <svg
     aria-hidden="true"
     fill="none"
-    width={size || width}
     height={size || height}
     viewBox="0 0 16 14"
+    width={size || width}
     {...props}
   >
     <path
@@ -266,13 +276,18 @@ export const TwIcon = ({size=20, width, height, ...props}: IconSvgProps) => (
   </svg>
 );
 
-export const InIcon = ({size=18, width, height, ...props}: IconSvgProps) => (
+export const InIcon = ({
+  size = 18,
+  width,
+  height,
+  ...props
+}: IconSvgProps) => (
   <svg
     aria-hidden="true"
     fill="none"
-    width={size || width}
     height={size || height}
     viewBox="0 0 14 14"
+    width={size || width}
     {...props}
   >
     <path
@@ -282,13 +297,18 @@ export const InIcon = ({size=18, width, height, ...props}: IconSvgProps) => (
   </svg>
 );
 
-export const InstIcon = ({size=20, width, height, ...props}: IconSvgProps) => (
+export const InstIcon = ({
+  size = 20,
+  width,
+  height,
+  ...props
+}: IconSvgProps) => (
   <svg
     aria-hidden="true"
     fill="none"
-    width={size || width}
     height={size || height}
     viewBox="0 0 14 14"
+    width={size || width}
     {...props}
   >
     <path

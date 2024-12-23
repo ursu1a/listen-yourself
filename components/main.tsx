@@ -1,9 +1,11 @@
 import Image from "next/image";
+import { Button } from "@nextui-org/button";
+
+import { Achievements } from "./achievements";
+
 import { title, subtitle, button } from "@/components/primitives";
 import { siteConfig } from "@/config/site";
 import Banner from "@/public/Banner.svg";
-import { Button } from "@nextui-org/button";
-import { Achievements } from "./achievements";
 
 export const Main = () => {
   return (
@@ -17,7 +19,7 @@ export const Main = () => {
                 {siteConfig.main.text}
               </p>
             </div>
-            <Button color="primary" className={button({ size: "lg" })}>
+            <Button className={button({ size: "lg" })} color="primary">
               {siteConfig.main.contactUs}
             </Button>
           </div>
@@ -27,9 +29,9 @@ export const Main = () => {
         </div>
         <div className="lg:absolute-0 right-0 top-0 w-full lg:w-7/12 lg:-mt-[220px] lg:-ml-[114px]">
           <Image
+            alt={siteConfig.main.altBanner}
             className="transform scale-25 animate-zoom-in"
             src={Banner}
-            alt={siteConfig.main.altBanner}
           />
         </div>
       </div>

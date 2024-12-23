@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+
 import { subtitle } from "./primitives";
 
 export const Achievements = () => {
@@ -17,7 +18,7 @@ export const Achievements = () => {
         text: "Lorem ipsum dolor sit amet",
       },
     ],
-    []
+    [],
   );
 
   return (
