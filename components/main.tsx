@@ -26,7 +26,11 @@ export const Main = () => {
           </div>
         </div>
         <div className="lg:absolute-0 right-0 top-0 w-full lg:w-7/12 lg:-mt-[220px] lg:-ml-[114px]">
-          <Image className="transform scale-25 animate-zoom-in" src={Banner} alt={siteConfig.main.altBanner} />
+          <Image
+            className="transform scale-25 animate-zoom-in"
+            src={Banner}
+            alt={siteConfig.main.altBanner}
+          />
         </div>
       </div>
     </section>

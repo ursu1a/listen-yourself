@@ -57,6 +57,6 @@ export const button = tv({
   variants: {
     size: {
       lg: "text-md py-6 w-full lg:text-xl lg:py-8 lg:px-10 lg:w-auto",
-    }
-  }
+    },
+  },
 });
