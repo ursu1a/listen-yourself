@@ -2,7 +2,8 @@ export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
   name: "Listen to yourself",
-  description: "Make beautiful websites regardless of your design experience.",
+  description:
+    "Individual Consultation Project. Professional consultant offering personalized guidance to help you achieve your goals.",
   navItems: [
     {
       label: "Home",
@@ -70,7 +71,7 @@ export const siteConfig = {
     title: "Listen to yourself Follow your heart",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus in libero risus semper habitant arcu eget. Et integer facilisi eget.",
     altBanner: "Listen to yourself",
-    contactUs: "Start readings",
+    contactUs: "Contact Us",
   },
   footer: {
     aboutTitle: "About me",

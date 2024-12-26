@@ -53,8 +53,8 @@ export const Footer = () => {
 
   return (
     <footer className="w-full flex justify-center py-8 mt-10 lg:mt-20">
-      <div className="container divide-y-1 divide-default-300 max-w-8xl px-6 pb-8">
-        <div className="flex flex-col lg:flex-row gap-x-6 gap-y-8 justify-center pb-8">
+      <div className="divide-y-1 divide-default-300 w-full">
+        <div className="container mx-auto max-w-8xl px-6 flex flex-col lg:flex-row gap-x-6 gap-y-8 justify-center pb-5 lg:pb-8">
           <div className="lg:w-1/3">
             <p className={subtitle({ className: "font-semibold mb-4" })}>
               {siteConfig.footer.aboutTitle}
@@ -90,8 +90,8 @@ export const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="pt-8">
-          <p className="text-lg text-center">
+        <div className="pt-5 lg:pt-8 px-6 lg:pb-8">
+          <p className="text-sm lg:text-lg text-center">
             <span>&copy; {getCurrentYear()}</span>{" "}
             <span>{siteConfig.footer.copyrights}</span>
           </p>
