@@ -69,7 +69,7 @@ export const siteConfig = {
   },
   main: {
     title: "Listen to yourself Follow your heart",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus in libero risus semper habitant arcu eget. Et integer facilisi eget.",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus in libero risus semper habitant arcu eget. Et integer facilisi eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus in libero risus semper habitant arcu eget. Et integer facilisi eget.",
     altBanner: "Listen to yourself",
     contactUs: "Contact Us",
   },
