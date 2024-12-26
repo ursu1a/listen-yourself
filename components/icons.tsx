@@ -158,19 +158,12 @@ export const HeartFilledIcon = ({
   </svg>
 );
 
-export const LogoIcon = ({
-  size = 50,
-  width,
-  height,
-  ...props
-}: IconSvgProps) => (
+export const LogoIcon = (props: IconSvgProps) => (
   <svg
     aria-hidden="true"
     focusable="false"
-    height={size || height}
     role="presentation"
     viewBox="0 0 24 24"
-    width={size || width}
     {...props}
   >
     <g height="100%" transform="matrix(1,0,0,1,0,0)" width="100%">
