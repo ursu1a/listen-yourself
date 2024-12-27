@@ -50,8 +50,8 @@ export const Navbar = () => {
 
   return (
     <NextUINavbar
-      className="navbar py-2 lg:py-4"
-      height="auto"
+      className="navbar"
+      height="4rem"
       maxWidth="full"
       position="sticky"
     >
@@ -90,7 +90,7 @@ export const Navbar = () => {
           <Link isExternal aria-label="Discord" href={siteConfig.links.discord}>
             <DiscordIcon className="text-default-500" />
           </Link>
-          <Link isExternal aria-label="Github" href={siteConfig.links.telegram}>
+          <Link isExternal aria-label="Telegram" href={siteConfig.links.telegram}>
             <TelegramIcon className="text-default-500" />
           </Link>
           <ThemeSwitch />
