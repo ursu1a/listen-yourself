@@ -18,7 +18,7 @@ export const Achievements = () => {
         text: "Lorem ipsum dolor sit amet",
       },
     ],
-    [],
+    []
   );
 
   return (
@@ -28,11 +28,11 @@ export const Achievements = () => {
           key={index}
           className="flex flex-col items-center gap-y-2 lg:gap-y-4 text-center text-white lg:text-start lg:items-start lg:w-1/4 px-3 py-3 lg:py-0"
         >
-          <p className={subtitle({ className: "font-semibold " })}>
+          <p className={subtitle({ className: "font-semibold" })}>
             {item.title}
           </p>
           <hr className="hidden lg:block border-b-3 w-1/3" />
-          <p>{item.text}</p>
+          <p className="text-sm lg:text-base">{item.text}</p>
         </div>
       ))}
     </div>

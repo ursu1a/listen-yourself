@@ -20,19 +20,18 @@ export const Testimonial = ({ item, className }: TestimonialProps) => {
         <Image
           alt={item.name}
           classNames={{
-            wrapper: "ring-8 ring-white bg-slate-300 dark:bg-default-100",
-            img: "object-cover",
+            wrapper: "ring-4 lg:ring-8 ring-white bg-slate-300 dark:bg-default-100",
+            img: "testimonial-image",
           }}
-          height={200}
           radius="md"
           shadow="lg"
           src={item.image}
-          width={230}
+          width="100%"
         />
       </div>
-      <div className="flex-1 shadow-xl bg-slate-300 dark:bg-default-100 px-5 pt-32 pb-6 lg:pb-10 rounded-lg flex flex-col text-center">
+      <div className="flex-1 shadow-xl bg-slate-300 dark:bg-default-100 px-4 lg:px-5 pt-28 lg:pt-32 pb-4 lg:pb-10 rounded-lg flex flex-col text-center">
         <div className="flex-1">
-          <p className="lg:text-lg leading-relaxed line-clamp-3">
+          <p className="text-sm lg:text-lg leading-relaxed line-clamp-3">
             {item.content}
           </p>
         </div>
