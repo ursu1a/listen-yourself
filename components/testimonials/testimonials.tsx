@@ -32,7 +32,7 @@ export const Testimonials = () => {
   );
 
   return (
-    <section className="max-w-7xl mx-auto">
+    <section className="px-6 max-w-7xl mx-auto">
       <div className="flex flex-col items-stretch lg:flex-row gap-y-6 gap-x-10">
         {items.map((item, index) => (
           <Testimonial key={index} className="lg:w-1/3" item={item} />
