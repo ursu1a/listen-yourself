@@ -10,7 +10,7 @@ export const Gallery = () => {
 
   return (
     <section className="bg-slate-300 dark:bg-default-100 rounded-xl">
-      <div className="container px-6 mx-auto grid grid-cols-2 lg:grid-cols-4 gap-4 bg-slate-300 dark:bg-default-100 lg:px-0 py-6">
+      <div className="container px-6 mx-auto grid grid-cols-2 lg:grid-cols-4 gap-4 bg-slate-300 dark:bg-default-100 py-6">
         {items.map((item, index) => (
           <Image
             key={index}
