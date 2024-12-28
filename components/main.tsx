@@ -17,7 +17,7 @@ export const Main = () => {
   );
 
   return (
-    <section className="relative lg:py-2">
+    <section className="relative">
       <div className="flex xl:items-center flex-col gap-y-4 lg:flex-row">
         <div className="lg:hidden -mt-[1.5rem]">{mainImage}</div>
         <div className="lg:w-1/2 xl:pt-24">
@@ -36,7 +36,7 @@ export const Main = () => {
             <Achievements />
           </div>
         </div>
-        <div className="hidden lg:block lg:absolute-0 right-0 top-0 w-full lg:w-1/2 lg:-mt-14 xl:-mt-20 xl:-ml-[6.5625rem]">
+        <div className="hidden lg:block lg:absolute-0 right-0 top-0 w-full lg:w-1/2 lg:-mt-12 xl:-mt-19 xl:-ml-[6.5625rem]">
           {mainImage}
         </div>
       </div>
