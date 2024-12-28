@@ -90,7 +90,11 @@ export const Navbar = () => {
           <Link isExternal aria-label="Discord" href={siteConfig.links.discord}>
             <DiscordIcon className="text-default-500" />
           </Link>
-          <Link isExternal aria-label="Telegram" href={siteConfig.links.telegram}>
+          <Link
+            isExternal
+            aria-label="Telegram"
+            href={siteConfig.links.telegram}
+          >
             <TelegramIcon className="text-default-500" />
           </Link>
           <ThemeSwitch />

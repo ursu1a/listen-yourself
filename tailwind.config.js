@@ -51,7 +51,9 @@ const config = {
         colors: {
           foreground: "#2C1001",
           primary: "#FFDE81",
-          secondary: "#49342F"
+          secondary: {
+            DEFAULT: "#49342F",
+          }
         }
       },
       dark: {
