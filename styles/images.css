@@ -1,0 +1,22 @@
+.gallery-item {
+  max-height: 150px;
+  width: 100%;
+}
+
+.testimonial-image {
+   width: 150px;
+   height: 150px;
+   object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .gallery-item {
+    max-height: 250px;
+  }
+
+  .testimonial-image {
+   width: 230px;
+   height: 200px;
+   object-fit: cover;
+}
+}

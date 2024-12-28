@@ -16,8 +16,7 @@ export const Gallery = () => {
             key={index}
             isZoomed
             alt={item}
-            classNames={{ wrapper: "" }}
-            height={250}
+            classNames={{ img: "gallery-item" }}
             shadow="lg"
             src={item}
             width="100%"
