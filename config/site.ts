@@ -78,6 +78,15 @@ export const siteConfig = {
     altBanner: "Listen to yourself",
     contactUs: "Contact Us",
   },
+  contact: {
+    title: "Get your individual consultation",
+    emailPlaceholder: "Enter your email",
+    requestBtn: "Request consultation",
+    contactMe: "Contact Me",
+    phone: "Phone",
+    email: "Email",
+    location: "Location",
+  },
   footer: {
     aboutTitle: "About me",
     aboutText:

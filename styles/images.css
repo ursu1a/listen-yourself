@@ -6,12 +6,11 @@
 .testimonial-image {
    width: 150px;
    height: 150px;
-   object-fit: cover;
 }
 
 @media (min-width: 768px) {
   .gallery-item {
-    max-height: 250px;
+    max-height: 380px;
   }
 
   .testimonial-image {

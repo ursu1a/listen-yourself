@@ -3,7 +3,7 @@ import { Button } from "@nextui-org/button";
 
 import { Achievements } from "./achievements";
 
-import { title, subtitle, button } from "@/components/primitives";
+import { title, subtitle, button, container } from "@/components/primitives";
 import { siteConfig } from "@/config/site";
 import Banner from "@/public/Banner.svg";
 
@@ -18,26 +18,28 @@ export const Main = () => {
 
   return (
     <section className="relative">
-      <div className="flex xl:items-center flex-col gap-y-4 lg:flex-row">
-        <div className="lg:hidden -mt-[1.5rem]">{mainImage}</div>
-        <div className="lg:w-1/2 xl:pt-24">
-          <div className="flex flex-col gap-y-5 lg:gap-y-8 items-start lg:w-11/12">
-            <h1 className={title({ size: "lg" })}>{siteConfig.main.title}</h1>
-            <div>
-              <p className={subtitle({ className: "font-light" })}>
-                {siteConfig.main.text}
-              </p>
+      <div className={container()}>
+        <div className="flex xl:items-center flex-col gap-y-4 lg:flex-row">
+          <div className="lg:hidden -mt-[1.5rem]">{mainImage}</div>
+          <div className="lg:w-1/2 xl:pt-24">
+            <div className="flex flex-col gap-y-5 lg:gap-y-8 items-start lg:w-11/12">
+              <h1 className={title({ size: "lg" })}>{siteConfig.main.title}</h1>
+              <div>
+                <p className={subtitle({ className: "font-light" })}>
+                  {siteConfig.main.text}
+                </p>
+              </div>
+              <Button className={button({ size: "lg" })} color="primary">
+                {siteConfig.main.contactUs}
+              </Button>
             </div>
-            <Button className={button({ size: "lg" })} color="primary">
-              {siteConfig.main.contactUs}
-            </Button>
+            <div className="w-full pt-2 mt-3 lg:mt-16">
+              <Achievements />
+            </div>
           </div>
-          <div className="w-full pt-2 mt-3 lg:mt-16">
-            <Achievements />
+          <div className="hidden lg:block lg:absolute-0 right-0 top-0 w-full lg:w-1/2 lg:-mt-12 xl:-mt-19 xl:-ml-[6.5625rem]">
+            {mainImage}
           </div>
-        </div>
-        <div className="hidden lg:block lg:absolute-0 right-0 top-0 w-full lg:w-1/2 lg:-mt-12 xl:-mt-19 xl:-ml-[6.5625rem]">
-          {mainImage}
         </div>
       </div>
     </section>
