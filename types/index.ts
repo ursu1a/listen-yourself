@@ -12,6 +12,9 @@ export interface ITestimonial {
 }
 
 export interface IGalleryItem {
+  title: string;
+  subtitle: string;
   image: string;
   alt: string;
+  url: string;
 }

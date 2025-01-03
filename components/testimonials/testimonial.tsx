@@ -20,8 +20,9 @@ export const Testimonial = ({ item, className }: TestimonialProps) => {
         <Image
           alt={item.name}
           classNames={{
-            wrapper: "ring-4 lg:ring-8 ring-white bg-slate-300 dark:bg-default-100",
-            img: "testimonial-image",
+            wrapper:
+              "ring-4 lg:ring-8 ring-white bg-slate-300 dark:bg-default-100",
+            img: "testimonial-image object-cover",
           }}
           radius="md"
           shadow="lg"

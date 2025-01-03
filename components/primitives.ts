@@ -60,3 +60,14 @@ export const button = tv({
     },
   },
 });
+
+export const container = tv({
+  base: "container px-6 mx-auto",
+  variants: {
+    tight: {
+      true: "max-w-7xl",
+    },
+  },
+});
+
+export const layout = tv({ base: "grid grid-cols-1 gap-y-24 lg:gap-y-44" });

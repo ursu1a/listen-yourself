@@ -1,5 +1,7 @@
 import { useMemo } from "react";
 
+import { container } from "../primitives";
+
 import { Testimonial } from "./testimonial";
 
 import { ITestimonial } from "@/types";
@@ -32,11 +34,13 @@ export const Testimonials = () => {
   );
 
   return (
-    <section className="px-6 max-w-7xl mx-auto">
-      <div className="flex flex-col items-stretch lg:flex-row gap-y-6 gap-x-10">
-        {items.map((item, index) => (
-          <Testimonial key={index} className="lg:w-1/3" item={item} />
-        ))}
+    <section className="">
+      <div className={container({ tight: true })}>
+        <div className="flex flex-col items-stretch lg:flex-row gap-y-6 gap-x-10">
+          {items.map((item, index) => (
+            <Testimonial key={index} className="lg:w-1/3" item={item} />
+          ))}
+        </div>
       </div>
     </section>
   );
