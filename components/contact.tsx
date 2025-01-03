@@ -9,7 +9,7 @@ import { siteConfig } from "@/config/site";
 const ContactForm = () => {
   return (
     <div className="lg:mt-5">
-      <div className="grid grid-cols-1 gap-y-6 lg:gap-y-8">
+      <div className="flex flex-col gap-y-6 lg:gap-y-8">
         <p className={title({ size: "sm" })}>{siteConfig.contact.title}</p>
         <Input
           placeholder={siteConfig.contact.emailPlaceholder}
@@ -57,8 +57,8 @@ export const GetContact = () => {
     <section>
       <div className="bg-default-200 py-10 lg:py-12">
         <div className={container({ tight: true })}>
-          <div className="grid lg:grid-cols-3 items-start gap-x-8 gap-y-8">
-            <div className="hidden lg:block">
+          <div className="flex flex-col lg:flex-row gap-x-8 gap-y-8">
+            <div className="hidden lg:block lg:w-1/3">
               <Image alt="Contact Banner" src="/contact-banner.jpg" />
             </div>
             <ContactForm />
