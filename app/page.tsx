@@ -8,8 +8,8 @@ export default function Home() {
   return (
     <div className={layout()}>
       <Main />
-      <Testimonials />
       <Gallery />
+      <Testimonials />
       <GetContact />
     </div>
   );

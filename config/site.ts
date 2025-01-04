@@ -1,9 +1,14 @@
 export type SiteConfig = typeof siteConfig;
+export type MetaSocial = typeof metaSocial;
 
 export const siteConfig = {
+  url: process.env.SITE_URL,
   name: "Listen to yourself",
   description:
     "Individual Consultation Project. Professional consultant offering personalized guidance to help you achieve your goals.",
+  author: "Vasil K.",
+  maintainer: "Angelika B.",
+  keywords: ["Individual consultation", "Follow me", "Job seaker"],
   navItems: [
     {
       label: "Home",
@@ -61,10 +66,13 @@ export const siteConfig = {
     },
   ],
   links: {
+    facebook: "http://facebook.com",
     telegram: "https://github.com/nextui-org/nextui",
     twitter: "https://twitter.com/getnextui",
+    linkedin: "http://www.linkedin.com",
     docs: "https://nextui.org",
     discord: "https://discord.gg/9b6yyZKmH4",
+    instagram: "https://www.instagram.com",
     sponsor: "https://patreon.com/jrgarciadev",
   },
   common: {
@@ -95,4 +103,42 @@ export const siteConfig = {
     connect: "Connect with me",
     copyrights: "Individual Consultation Project. All rights reserved.",
   },
+};
+
+export const metaSocial = {
+  openGraph: {
+    title: siteConfig.name,
+    description: siteConfig.description,
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    images: [
+      {
+        url: `${siteConfig.url}/Banner.svg`,
+        width: 793,
+        height: 892,
+        alt: "Lsiten yourself",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.name,
+    description: siteConfig.description,
+    images: [
+      `${siteConfig.url}/Banner.svg`,
+      `${siteConfig.url}/contact-banner.jpg`,
+    ],
+    creator: "@grond6",
+  },
+};
+
+export const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Vasyl K.",
+  alternateName: "grond",
+  url: "https://listen-yourself.vercel.app",
+  logo: "",
 };

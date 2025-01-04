@@ -4,7 +4,7 @@ import clsx from "clsx";
 
 import { Providers } from "./providers";
 
-import { siteConfig } from "@/config/site";
+import { siteConfig, metaSocial, structuredData } from "@/config/site";
 import { fontSans } from "@/config/fonts";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
@@ -14,10 +14,17 @@ export const metadata: Metadata = {
     default: siteConfig.name,
     template: `%s - ${siteConfig.name}`,
   },
+  alternates: { canonical: siteConfig.url },
+  authors: { name: siteConfig.author },
+  publisher: siteConfig.maintainer,
+  keywords: siteConfig.keywords,
   description: siteConfig.description,
+  robots: { index: true, follow: true },
   icons: {
     icon: "/favicon.png",
   },
+  openGraph: metaSocial.openGraph,
+  twitter: metaSocial.twitter,
 };
 
 export const viewport: Viewport = {
@@ -34,7 +41,12 @@ export default function RootLayout({
 }) {
   return (
     <html suppressHydrationWarning lang="en">
-      <head />
+      <head>
+        <script
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+          type="application/ld+json"
+        />
+      </head>
       <body
         className={clsx(
           "min-h-screen bg-background font-sans antialiased",
