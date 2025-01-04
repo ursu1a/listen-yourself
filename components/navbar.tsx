@@ -55,9 +55,13 @@ export const Navbar = () => {
       maxWidth="full"
       position="sticky"
     >
-      <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
-        <NavbarBrand as="li" className="gap-3 max-w-fit">
-          <NextLink href="/">
+      <NavbarContent
+        as="div"
+        className="basis-1/5 sm:basis-full"
+        justify="start"
+      >
+        <NavbarBrand className="gap-3 max-w-fit">
+          <NextLink aria-label={siteConfig.name} href="/">
             <LogoIcon className="logo" />
           </NextLink>
         </NavbarBrand>

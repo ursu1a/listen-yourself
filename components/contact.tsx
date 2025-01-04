@@ -10,7 +10,7 @@ const ContactForm = () => {
   return (
     <div className="lg:mt-5">
       <div className="flex flex-col gap-y-6 lg:gap-y-8">
-        <p className={title({ size: "sm" })}>{siteConfig.contact.title}</p>
+        <h2 className={title({ size: "sm" })}>{siteConfig.contact.title}</h2>
         <Input
           placeholder={siteConfig.contact.emailPlaceholder}
           size="lg"

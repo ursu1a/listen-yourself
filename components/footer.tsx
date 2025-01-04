@@ -33,27 +33,31 @@ export const Footer = () => {
     () => [
       {
         icon: FBIcon,
-        url: "/",
+        label: "Facebook",
+        url: siteConfig.links.facebook,
       },
       {
         icon: TwIcon,
-        url: "/",
+        label: "Twitter",
+        url: siteConfig.links.twitter,
       },
       {
         icon: InIcon,
-        url: "/",
+        label: "LinkedIn",
+        url: siteConfig.links.linkedin,
       },
       {
         icon: InstIcon,
-        url: "/",
+        label: "Insagram",
+        url: siteConfig.links.instagram,
       },
     ],
     [],
   );
 
   return (
-    <footer className="w-full flex justify-center py-8 mt-16 lg:mt-32">
-      <div className="divide-y-1 divide-default-300 w-full">
+    <footer>
+      <div className="divide-y-1 divide-default-300 py-8 mt-16 lg:mt-32">
         <div className={container()}>
           <div className="flex flex-col lg:flex-row gap-x-6 gap-y-8 justify-center pb-5 lg:pb-8">
             <div className="lg:w-1/3">
@@ -66,29 +70,29 @@ export const Footer = () => {
               <p className={subtitle({ className: "font-semibold mb-4" })}>
                 {siteConfig.footer.services}
               </p>
-              <div className="grid grid-cols-1 gap-y-2">
+              <ul className="flex flex-col gap-y-2">
                 {servicesLinks.map((service, index) => (
-                  <Link
-                    key={`${service.url}-${index}`}
-                    className="text-current"
-                    href={service.url}
-                  >
-                    {service.title}
-                  </Link>
+                  <li key={`services-${index}`}>
+                    <Link className="text-current" href={service.url}>
+                      {service.title}
+                    </Link>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
             <div className="lg:w-1/3">
               <p className={subtitle({ className: "font-semibold mb-4" })}>
                 {siteConfig.footer.connect}
               </p>
-              <div className="flex items-center gap-x-6">
-                {socialLinks.map(({ icon: Icon, url }, index) => (
-                  <Link key={`${url}-${index}`} className="py-1" href={url}>
-                    <Icon />
-                  </Link>
+              <ul className="flex items-center gap-x-6">
+                {socialLinks.map(({ icon: Icon, url, label }) => (
+                  <li key={label}>
+                    <Link aria-label={label} className="py-1" href={url}>
+                      <Icon />
+                    </Link>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
           </div>
         </div>
