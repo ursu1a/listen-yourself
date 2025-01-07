@@ -4,7 +4,7 @@ import { Image } from "@nextui-org/image";
 import clsx from "clsx";
 import ReactStars from "react-stars";
 
-import { button } from "@/components/primitives";
+import { button } from "@/components/shared/primitives";
 import { ITestimonial } from "@/types/index";
 import { siteConfig } from "@/config/site";
 
@@ -13,7 +13,7 @@ type TestimonialProps = {
   className: string;
 };
 
-export const Testimonial = ({ item, className }: TestimonialProps) => {
+export const TestimonialsItem = ({ item, className }: TestimonialProps) => {
   return (
     <div className={clsx(className, "flex flex-col relative")}>
       <div className="-mb-20 z-10 mx-auto">

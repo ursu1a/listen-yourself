@@ -1,9 +1,9 @@
 import Image from "next/image";
 import { Button } from "@nextui-org/button";
+import { Link } from "@nextui-org/link";
 
-import { Achievements } from "./achievements";
-
-import { title, button, container } from "@/components/primitives";
+import { Achievements } from "@/components/sections/Main/Achievements";
+import { title, button, container } from "@/components/shared/primitives";
 import { siteConfig } from "@/config/site";
 import Banner from "@/public/Banner.svg";
 
@@ -17,15 +17,20 @@ export const Main = () => {
   );
 
   return (
-    <section className="relative">
-      <div className={container()}>
+    <section>
+      <div className={container({ className: "relative" })}>
         <div className="flex xl:items-center flex-col gap-y-4 lg:flex-row">
           <div className="lg:hidden -mt-[1.5rem]">{mainImage}</div>
           <div className="lg:w-1/2 xl:pt-24">
             <div className="flex flex-col gap-y-5 lg:gap-y-8 items-start lg:w-11/12">
               <h1 className={title({ size: "lg" })}>{siteConfig.main.title}</h1>
               <p className="font-light mb-4">{siteConfig.main.text}</p>
-              <Button className={button({ size: "lg" })} color="primary">
+              <Button
+                as={Link}
+                className={button({ size: "xl" })}
+                color="primary"
+                href="#contact"
+              >
                 {siteConfig.main.contactUs}
               </Button>
             </div>

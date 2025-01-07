@@ -56,7 +56,8 @@ export const button = tv({
   base: "rounded-full",
   variants: {
     size: {
-      lg: "text-md py-6 w-full lg:text-xl lg:py-8 lg:px-10 lg:w-auto",
+      lg: "text-md py-6 w-full lg:text-lg lg:py-6 lg:px-10 lg:w-auto rounded-xl",
+      xl: "text-md py-6 w-full lg:text-xl lg:py-8 lg:px-10 lg:w-auto",
     },
   },
 });
