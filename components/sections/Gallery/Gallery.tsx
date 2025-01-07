@@ -1,9 +1,8 @@
 import { useMemo } from "react";
 
-import { container } from "../primitives";
+import { GalleryItem } from "./GalleryItem";
 
-import { GalleryItem } from "./galleryItem";
-
+import { container } from "@/components/shared/primitives";
 import { IGalleryItem } from "@/types";
 
 export const Gallery = () => {

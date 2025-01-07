@@ -87,8 +87,12 @@ export const siteConfig = {
     contactUs: "Contact Us",
   },
   contact: {
-    title: "Get your individual consultation",
-    emailPlaceholder: "Enter your email",
+    title: "Get individual consultation",
+    placeholders: {
+      name: "Your name",
+      email: "Your email",
+      message: "Your message",
+    },
     requestBtn: "Request consultation",
     contactMe: "Contact Me",
     phone: "Phone",

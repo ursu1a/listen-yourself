@@ -2,6 +2,8 @@
 
 import { useEffect } from "react";
 
+import { container } from "@/components/shared/primitives";
+
 export default function Error({
   error,
   reset,
@@ -16,7 +18,7 @@ export default function Error({
   }, [error]);
 
   return (
-    <div>
+    <div className={container()}>
       <h2>Something went wrong!</h2>
       <button
         onClick={

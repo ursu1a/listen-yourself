@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 
-import { subtitle } from "./primitives";
+import { subtitle } from "@/components/shared/primitives";
 
 export const Achievements = () => {
   const data = useMemo(

@@ -1,8 +1,8 @@
 import { useMemo } from "react";
 import { Link } from "@nextui-org/link";
 
-import { FBIcon, InIcon, InstIcon, TwIcon } from "@/components/icons";
-import { container, subtitle } from "@/components/primitives";
+import { FBIcon, InIcon, InstIcon, TwIcon } from "@/components/shared/icons";
+import { container, subtitle } from "@/components/shared/primitives";
 import { siteConfig } from "@/config/site";
 import { getCurrentYear } from "@/utils/functions";
 
@@ -96,7 +96,7 @@ export const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="pt-5 lg:pt-8 px-6 lg:pb-8">
+        <div className="pt-5 lg:pt-8 px-6">
           <p className="text-sm lg:text-lg text-center">
             <span>&copy; {getCurrentYear()}</span>{" "}
             <span>{siteConfig.footer.copyrights}</span>
