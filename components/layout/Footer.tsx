@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { Link } from "@nextui-org/link";
+import { Link } from "@heroui/react";
 
 import { FBIcon, InIcon, InstIcon, TwIcon } from "@/components/shared/icons";
 import { container, subtitle } from "@/components/shared/primitives";

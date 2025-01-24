@@ -4,6 +4,11 @@ export type IconSvgProps = SVGProps<SVGSVGElement> & {
   size?: number;
 };
 
+export type ApiResponse = {
+  success: boolean;
+  message: string;
+};
+
 export interface ITestimonial {
   name: string;
   image: string;
@@ -18,3 +23,12 @@ export interface IGalleryItem {
   alt: string;
   url: string;
 }
+
+export interface IEmailData {
+  name: string;
+  email: string;
+  message: string;
+  templateId: string;
+}
+
+export interface IContactForm extends Omit<IEmailData, "templateId"> {}

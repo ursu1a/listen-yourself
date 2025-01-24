@@ -1,38 +1,75 @@
-import { Input, Textarea } from "@nextui-org/input";
-import { Button } from "@nextui-org/button";
+"use client";
+import { Input, Textarea } from "@heroui/react";
+import { Button } from "@heroui/react";
+import { useSnackbar } from "notistack";
+import { useRouter } from "next/navigation";
 
 import { button, title } from "@/components/shared/primitives";
-
-import { siteConfig } from "@/config/site";
+import { siteConfig as strings } from "@/config/site";
+import { IContactForm } from "@/types";
+import { useContactForm } from "@/hooks/useContactForm";
+import { getErrorMessage } from "@/utils/functions";
 
 export const ContactForm = () => {
+  const router = useRouter();
+  const { enqueueSnackbar } = useSnackbar();
+  const { register, reset, handleSubmit, errors, loading, doSubmit } =
+    useContactForm();
+  const { validators } = strings.contact;
+
+  const onSubmit = async (data: IContactForm) => {
+    const result = await doSubmit(data);
+
+    enqueueSnackbar(result.message, {
+      variant: result.success ? "success" : "error",
+    });
+    if (result.success) {
+      router.push("/");
+      reset();
+    }
+  };
+
   return (
-    <div className="lg:mt-5">
-      <div className="flex flex-col items-start gap-y-3">
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <div className="lg:mt-4 flex flex-col items-start gap-y-3">
         <h2 className={title({ size: "sm", className: "mb-2" })}>
-          {siteConfig.contact.title}
+          {strings.contact.title}
         </h2>
         <Input
-          placeholder={siteConfig.contact.placeholders.name}
+          {...register("name")}
+          errorMessage={getErrorMessage(validators, errors, "name")}
+          isInvalid={!!errors.name}
+          placeholder={strings.contact.placeholders.name}
           size="lg"
           variant="faded"
         />
         <Input
-          placeholder={siteConfig.contact.placeholders.email}
+          {...register("email")}
+          errorMessage={getErrorMessage(validators, errors, "email")}
+          isInvalid={!!errors.email}
+          placeholder={strings.contact.placeholders.email}
           size="lg"
           variant="faded"
         />
         <Textarea
+          {...register("message")}
+          errorMessage={getErrorMessage(validators, errors, "message")}
+          isInvalid={!!errors.message}
           maxRows={8}
           minRows={4}
-          placeholder={siteConfig.contact.placeholders.message}
+          placeholder={strings.contact.placeholders.message}
           size="lg"
           variant="faded"
         />
-        <Button className={button({ size: "lg" })} color="primary">
-          {siteConfig.contact.requestBtn}
+        <Button
+          className={button({ size: "lg" })}
+          color="primary"
+          isLoading={loading}
+          type="submit"
+        >
+          {strings.contact.requestBtn}
         </Button>
       </div>
-    </div>
+    </form>
   );
 };

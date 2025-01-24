@@ -1,6 +1,6 @@
 "use client";
-import { Button } from "@nextui-org/button";
-import { Image } from "@nextui-org/image";
+import { Button } from "@heroui/react";
+import { Image } from "@heroui/react";
 import clsx from "clsx";
 import ReactStars from "react-stars";
 
