@@ -1,5 +1,5 @@
 const rateLimitMap = new Map<string, number[]>();
-const MAX_REQUESTS = 2; // Maximum number of requests
+const MAX_REQUESTS = 20; // Maximum number of requests
 const WINDOW_MS = 15 * 60 * 1000; // 15 minutes
 
 export const checkRateLimit = (ip: string): boolean => {
