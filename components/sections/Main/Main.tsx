@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { Button } from "@nextui-org/button";
-import { Link } from "@nextui-org/link";
+import { Button } from "@heroui/react";
+import { Link } from "@heroui/react";
 
 import { Achievements } from "@/components/sections/Main/Achievements";
 import { title, button, container } from "@/components/shared/primitives";

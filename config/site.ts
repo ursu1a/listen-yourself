@@ -11,20 +11,12 @@ export const siteConfig = {
   keywords: ["Individual consultation", "Follow me", "Job seaker"],
   navItems: [
     {
-      label: "Home",
-      href: "/",
-    },
-    {
-      label: "Docs",
-      href: "/docs",
+      label: "Blog",
+      href: "/posts",
     },
     {
       label: "Pricing",
       href: "/pricing",
-    },
-    {
-      label: "Blog",
-      href: "/blog",
     },
     {
       label: "About",
@@ -92,6 +84,19 @@ export const siteConfig = {
       name: "Your name",
       email: "Your email",
       message: "Your message",
+    },
+    emailSubject: "Message from",
+    validators: {
+      name_required: "Name is required",
+      email_required: "Email is required",
+      email_format: "Email format is wrong",
+      message_required: "Message is required",
+      message_min_len: "Message is too short. Must be at least 10 characters",
+      message_max_len: "Message is too long. Must be less than 500 characters",
+    },
+    responses: {
+      success: "Email sent successfully",
+      error: "Email sending error",
     },
     requestBtn: "Request consultation",
     contactMe: "Contact Me",

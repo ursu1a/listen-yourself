@@ -1,23 +1,23 @@
 import {
-  nextui
-} from '@nextui-org/theme'
+  heroui
+} from '@heroui/react';
 
 /** @type {import('tailwindcss').Config} */
 const config = {
   content: [
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
-    './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}'
+    './node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}'
   ],
   theme: {
-    extend: {      
+    extend: {
       fontFamily: {
         sans: ["var(--font-sans)"],
       },
       fontSize: {
         '6xl': "4rem",
       },
-      
+
       animation: {
         'zoom-in': 'zoomIn 1.5s ease-in-out forwards',
         'block-in': 'scaleIn 0.8s ease-out forwards',
@@ -45,7 +45,7 @@ const config = {
     },
   },
   darkMode: "class",
-  plugins: [nextui({
+  plugins: [heroui({
     themes: {
       light: {
         colors: {
