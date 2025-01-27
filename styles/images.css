@@ -4,8 +4,8 @@
 }
 
 .testimonial-image {
-   width: 150px;
-   height: 150px;
+  width: 150px;
+  height: 150px;
 }
 
 @media (min-width: 768px) {
@@ -14,8 +14,8 @@
   }
 
   .testimonial-image {
-   width: 230px;
-   height: 200px;
-   object-fit: cover;
-}
+    width: 230px;
+    height: 200px;
+    object-fit: cover;
+  }
 }

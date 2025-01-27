@@ -1,6 +1,5 @@
 "use client";
-import { Input, Textarea } from "@heroui/react";
-import { Button } from "@heroui/react";
+import { Button, Input, Textarea } from "@heroui/react";
 import { useSnackbar } from "notistack";
 import { useRouter } from "next/navigation";
 

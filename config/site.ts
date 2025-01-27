@@ -8,7 +8,7 @@ export const siteConfig = {
     "Individual Consultation Project. Professional consultant offering personalized guidance to help you achieve your goals.",
   author: "Vasil K.",
   maintainer: "Angelika B.",
-  keywords: ["Individual consultation", "Follow me", "Job seaker"],
+  keywords: ["Individual consultation", "Follow me", "Job seeker"],
   navItems: [
     {
       label: "Blog",
@@ -25,8 +25,8 @@ export const siteConfig = {
   ],
   navMenuItems: [
     {
-      label: "Profile",
-      href: "/profile",
+      label: "Blog",
+      href: "/posts",
     },
     {
       label: "Dashboard",
@@ -71,6 +71,14 @@ export const siteConfig = {
     actions: {
       viewMore: "View More",
     },
+    header: {
+      sponsor: "Sponsor",
+    },
+    errors: {
+      page_error: "An error occurred",
+      page_not_found: "The page you requested is not found.",
+    },
+    back_home: "Back to Home",
   },
   main: {
     title: "Listen to yourself Follow your heart",
@@ -103,6 +111,17 @@ export const siteConfig = {
     phone: "Phone",
     email: "Email",
     location: "Location",
+  },
+  blog: {
+    root: "Blog",
+    title: "Blog",
+    description: "Explore our insights",
+    no_posts_found: "No posts found",
+    read: "read",
+    publishedOn: "Published on",
+    reads: "reads",
+    post_doesnt_exist: "Post does not exist",
+    back_blog: "Back to Blog",
   },
   footer: {
     aboutTitle: "About me",

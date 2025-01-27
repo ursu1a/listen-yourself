@@ -24,6 +24,7 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ success: true, message: info.messageId });
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.error("Error sending email:", error);
 
     return NextResponse.json(

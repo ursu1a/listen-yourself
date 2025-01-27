@@ -1,3 +1,4 @@
+"use client";
 import {
   Navbar as NextUINavbar,
   NavbarContent,
@@ -7,13 +8,14 @@ import {
   NavbarItem,
   NavbarMenuItem,
 } from "@heroui/react";
-import { Button } from "@heroui/react";
-import { Kbd } from "@heroui/react";
-import { Link } from "@heroui/react";
-import { Input } from "@heroui/react";
+import { Kbd, Link, Input } from "@heroui/react";
 import { link as linkStyles } from "@heroui/react";
 import NextLink from "next/link";
 import clsx from "clsx";
+import { usePathname } from "next/navigation";
+import { useEffect, useReducer } from "react";
+
+import { SponsorButton } from "../ui/SponsorButton";
 
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/ui/ThemeSwitch";
@@ -21,12 +23,20 @@ import {
   TwitterIcon,
   TelegramIcon,
   DiscordIcon,
-  HeartFilledIcon,
   SearchIcon,
   LogoIcon,
 } from "@/components/shared/icons";
 
 export const Navbar = () => {
+  const pathname = usePathname();
+  const [menuOpen, setMenuOpen] = useReducer((current) => !current, false);
+
+  useEffect(() => {
+    if (menuOpen) {
+      setMenuOpen();
+    }
+  }, [pathname]);
+
   const searchInput = (
     <Input
       aria-label="Search"
@@ -52,15 +62,17 @@ export const Navbar = () => {
     <NextUINavbar
       className="navbar"
       height="4rem"
+      isMenuOpen={menuOpen}
       maxWidth="full"
       position="sticky"
+      onMenuOpenChange={setMenuOpen}
     >
       <NavbarContent
         as="div"
         className="basis-1/5 sm:basis-full"
         justify="start"
       >
-        <NavbarBrand className="gap-3 max-w-fit">
+        <NavbarBrand className="max-w-fit">
           <NextLink aria-label={siteConfig.name} href="/">
             <LogoIcon className="logo" />
           </NextLink>
@@ -71,9 +83,12 @@ export const Navbar = () => {
               <NextLink
                 className={clsx(
                   linkStyles({ color: "foreground" }),
-                  "data-[active=true]:text-primary data-[active=true]:font-medium",
+                  "decoration-2 font-medium",
+                  "data-[active=true]:underline",
+                  "data-[active=true]:underline-offset-8",
                 )}
                 color="foreground"
+                data-active={pathname.includes(item.href)}
                 href={item.href}
               >
                 {item.label}
@@ -88,6 +103,8 @@ export const Navbar = () => {
         justify="end"
       >
         <NavbarItem className="hidden sm:flex gap-2">
+          <ThemeSwitch />
+          <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem>
           <Link isExternal aria-label="Twitter" href={siteConfig.links.twitter}>
             <TwitterIcon className="text-default-500" />
           </Link>
@@ -101,28 +118,17 @@ export const Navbar = () => {
           >
             <TelegramIcon className="text-default-500" />
           </Link>
-          <ThemeSwitch />
         </NavbarItem>
-        <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem>
         <NavbarItem className="hidden md:flex">
-          <Button
-            isExternal
-            as={Link}
-            className="text-sm font-normal text-default-600 bg-default-100"
-            href={siteConfig.links.sponsor}
-            startContent={<HeartFilledIcon className="text-danger" />}
-            variant="flat"
-          >
-            Sponsor
-          </Button>
+          <SponsorButton />
         </NavbarItem>
       </NavbarContent>
 
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
+        <ThemeSwitch />
         <Link isExternal aria-label="Github" href={siteConfig.links.telegram}>
           <TelegramIcon className="text-default-500" />
         </Link>
-        <ThemeSwitch />
         <NavbarMenuToggle />
       </NavbarContent>
 
@@ -139,8 +145,9 @@ export const Navbar = () => {
                       ? "danger"
                       : "foreground"
                 }
-                href="#"
+                href={item.href}
                 size="lg"
+                onPress={setMenuOpen}
               >
                 {item.label}
               </Link>

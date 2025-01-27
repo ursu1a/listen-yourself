@@ -32,3 +32,14 @@ export interface IEmailData {
 }
 
 export interface IContactForm extends Omit<IEmailData, "templateId"> {}
+
+export interface IPost {
+  slug: string;
+  title: string;
+  date: string;
+  featuredImage?: string;
+  excerpt: string;
+  content?: string;
+  readTime?: number;
+  views: number;
+}

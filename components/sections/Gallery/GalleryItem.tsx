@@ -1,5 +1,4 @@
-import { Card, CardFooter } from "@heroui/react";
-import { Image } from "@heroui/react";
+import { Card, CardFooter, Image } from "@heroui/react";
 import Link from "next/link";
 
 import { IGalleryItem } from "@/types";
@@ -15,17 +14,23 @@ export const GalleryItem = ({ item }: GalleryItemProps) => {
         <Image
           alt={item.alt}
           className="gallery-item h-96 object-cover transition-transform duration-300 group-hover:scale-105"
+          classNames={{ wrapper: "bg-top bg-cover" }}
+          fallbackSrc="/default-fallback-image.png"
           radius="none"
           src={item.image}
           width="100%"
         />
-        <CardFooter className="absolute bottom-0 w-full h-2/3 z-10 flex flex-col justify-end items-center text-white pb-3 lg:pb-8 bg-gradient-to-t from-black/90 via-black/50 to-transparent">
-          <p className="text-sm lg:text-2xl lg:uppercase font-semibold leading-9 line-clamp-1">
-            {item.title}
-          </p>
-          <p className="hidden lg:block text-sm lg:text-lg leading-snug line-clamp-1">
-            {item.subtitle}
-          </p>
+        <CardFooter className="absolute text-center bottom-0 w-full h-2/3 z-10 flex flex-col justify-end items-center text-white pb-3 lg:pb-8 bg-gradient-to-t from-black/90 via-black/50 to-transparent">
+          <div className="line-clamp-1">
+            <p className="text-sm lg:text-2xl lg:uppercase font-semibold leading-9">
+              {item.title}
+            </p>
+          </div>
+          <div className="line-clamp-1">
+            <p className="hidden lg:block text-sm lg:text-lg leading-snug">
+              {item.subtitle}
+            </p>
+          </div>
         </CardFooter>
       </Card>
     </Link>

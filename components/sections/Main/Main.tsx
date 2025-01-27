@@ -1,6 +1,5 @@
 import Image from "next/image";
-import { Button } from "@heroui/react";
-import { Link } from "@heroui/react";
+import { Button, Link } from "@heroui/react";
 
 import { Achievements } from "@/components/sections/Main/Achievements";
 import { title, button, container } from "@/components/shared/primitives";
@@ -18,7 +17,7 @@ export const Main = () => {
 
   return (
     <section>
-      <div className={container({ className: "relative" })}>
+      <div className={container({ className: "relative lg:pt-8" })}>
         <div className="flex xl:items-center flex-col gap-y-4 lg:flex-row">
           <div className="lg:hidden -mt-[1.5rem]">{mainImage}</div>
           <div className="lg:w-1/2 xl:pt-24">

@@ -1,7 +1,12 @@
 import { useMemo } from "react";
 import { Link } from "@heroui/react";
 
-import { FBIcon, InIcon, InstIcon, TwIcon } from "@/components/shared/icons";
+import {
+  FacebookIcon,
+  LinkedinIcon,
+  InstagramIcon,
+  TwitterIcon,
+} from "@/components/shared/icons";
 import { container, subtitle } from "@/components/shared/primitives";
 import { siteConfig } from "@/config/site";
 import { getCurrentYear } from "@/utils/functions";
@@ -32,22 +37,22 @@ export const Footer = () => {
   const socialLinks = useMemo(
     () => [
       {
-        icon: FBIcon,
+        icon: FacebookIcon,
         label: "Facebook",
         url: siteConfig.links.facebook,
       },
       {
-        icon: TwIcon,
+        icon: TwitterIcon,
         label: "Twitter",
         url: siteConfig.links.twitter,
       },
       {
-        icon: InIcon,
+        icon: LinkedinIcon,
         label: "LinkedIn",
         url: siteConfig.links.linkedin,
       },
       {
-        icon: InstIcon,
+        icon: InstagramIcon,
         label: "Insagram",
         url: siteConfig.links.instagram,
       },
@@ -87,7 +92,11 @@ export const Footer = () => {
               <ul className="flex items-center gap-x-6">
                 {socialLinks.map(({ icon: Icon, url, label }) => (
                   <li key={label}>
-                    <Link aria-label={label} className="py-1" href={url}>
+                    <Link
+                      aria-label={label}
+                      className="py-1 text-default-400"
+                      href={url}
+                    >
                       <Icon />
                     </Link>
                   </li>

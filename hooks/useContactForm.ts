@@ -1,10 +1,11 @@
 import { useState } from "react";
-import axios, { AxiosError } from "axios";
+import { AxiosError } from "axios";
 import sanitizeHtml from "sanitize-html";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
+import axios from "@/lib/axios";
 import { ApiResponse, IContactForm } from "@/types";
 import { isValidEmail } from "@/utils/functions";
 import { siteConfig as strings } from "@/config/site";
