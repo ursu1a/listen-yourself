@@ -1,6 +1,6 @@
 .logo {
-  width: 35px;
-  height: auto;
+  width: 38px;
+  margin-left: -3px;
 }
 
 @media (min-width: 768px) {

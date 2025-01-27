@@ -1,16 +1,12 @@
 "use client";
 
 import { useEffect } from "react";
+import { Button } from "@heroui/react";
 
-import { container } from "@/components/shared/primitives";
+import { button, container } from "@/components/shared/primitives";
+import { siteConfig as strings } from "@/config/site";
 
-export default function Error({
-  error,
-  reset,
-}: {
-  error: Error;
-  reset: () => void;
-}) {
+export default function Error({ error }: { error: Error }) {
   useEffect(() => {
     // Log the error to an error reporting service
     /* eslint-disable no-console */
@@ -18,16 +14,27 @@ export default function Error({
   }, [error]);
 
   return (
-    <div className={container()}>
-      <h2>Something went wrong!</h2>
-      <button
-        onClick={
-          // Attempt to recover by trying to re-render the segment
-          () => reset()
-        }
-      >
-        Try again
-      </button>
-    </div>
+    <>
+      <title>{strings.common.errors.page_error}</title>
+      <div className={container({ className: "pt-8 lg:pt-[100px]" })}>
+        <div className="flex flex-col items-center gap-y-4 lg:gap-y-6">
+          <p className="text-5xl lg:text-8xl font-bold text-default-500">500</p>
+          <div className="text-center">
+            <p className="text-lg text-default-500">
+              {strings.common.errors.page_error}:
+            </p>
+            <p className="text-lg">{error.message}</p>
+          </div>
+          <Button
+            as="a"
+            className={button({ size: "lg" })}
+            color="primary"
+            href="/"
+          >
+            {strings.common.back_home}
+          </Button>
+        </div>
+      </div>
+    </>
   );
 }

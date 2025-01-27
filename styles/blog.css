@@ -1,0 +1,9 @@
+.post-content {
+  img {
+    @apply rounded-lg my-3 w-full max-h-[140px] object-cover shadow-md mx-auto;
+  }
+
+  a {
+    @apply text-blue-600 underline hover:text-blue-800;
+  }
+}
