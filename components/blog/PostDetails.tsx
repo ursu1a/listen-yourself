@@ -51,7 +51,7 @@ export const PostDetails = async ({ post }: PostDetailsProps) => {
         {postHeader(post)}
         <div
           dangerouslySetInnerHTML={{ __html: post.content || "" }}
-          className="prose prose-gray post-content mx-auto pt-3 lg:pt-5 prose-headings:mb-2 prose-headings:font-medium"
+          className="prose prose-gray dark:prose-invert post-content mx-auto pt-3 lg:pt-5 prose-headings:mb-2 prose-headings:font-medium"
         />
       </article>
     </div>
