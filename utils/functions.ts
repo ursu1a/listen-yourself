@@ -30,7 +30,7 @@ export function calculateReadingTime(content: string): number {
 export function getErrorMessage(
   messages: Record<string, string>,
   errors: Record<string, any>,
-  key: string,
+  key: string
 ): string {
   return messages[errors[key]?.message] || "";
 }

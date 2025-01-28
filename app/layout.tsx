@@ -10,6 +10,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.SITE_URL!),
   title: {
     default: siteConfig.name,
     template: `%s - ${siteConfig.name}`,
@@ -50,7 +51,7 @@ export default function RootLayout({
       <body
         className={clsx(
           "bg-background font-sans antialiased",
-          fontSans.variable,
+          fontSans.variable
         )}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>

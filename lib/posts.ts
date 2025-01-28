@@ -30,7 +30,7 @@ const getDocViews = async (slug: string): Promise<number> => {
 };
 
 // All posts
-export const getAllPosts = async (): Promise<IPost[]> => {
+export const getAllPosts = async (): Promise<IPost[] | null> => {
   try {
     const fileNames = fs.readdirSync(postsDirectory);
 
@@ -49,13 +49,13 @@ export const getAllPosts = async (): Promise<IPost[]> => {
     });
 
     return posts.sort((a, b) =>
-      compareDesc(new Date(a.date), new Date(b.date)),
+      compareDesc(new Date(a.date), new Date(b.date))
     );
   } catch (error) {
     /* eslint-disable no-console */
     console.error(error);
 
-    return [];
+    return null;
   }
 };
 
