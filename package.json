@@ -15,6 +15,7 @@
 		"@react-aria/ssr": "3.9.7",
 		"@react-aria/visually-hidden": "3.8.18",
 		"@tailwindcss/typography": "^0.5.16",
+		"@types/sanitize-html": "^2.13.0",
 		"axios": "^1.7.9",
 		"clsx": "2.1.1",
 		"date-fns": "^4.1.0",
