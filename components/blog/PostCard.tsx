@@ -5,6 +5,7 @@ import { PostImage } from "../ui/PostImage";
 import { ReadTime } from "../ui/ReadTime";
 
 import { IPost } from "@/types";
+import { IMAGES_ROOT_DIR } from "@/lib/constants";
 
 export type PostCardProps = {
   item: IPost;
@@ -23,7 +24,7 @@ export const PostCard = ({ item }: PostCardProps) => {
         className="w-full object-cover h-[160px]"
         radius="none"
         shadow="sm"
-        src={item?.featuredImage}
+        src={`${IMAGES_ROOT_DIR}${item?.featuredImage}`}
       />
       <CardBody className="flex-grow block pt-4 px-4 pb-0">
         <h3

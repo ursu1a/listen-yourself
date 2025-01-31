@@ -41,7 +41,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html suppressHydrationWarning lang="en">
+    <html suppressHydrationWarning className="scroll-smooth" lang="en">
       <head>
         <script
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
@@ -51,7 +51,7 @@ export default function RootLayout({
       <body
         className={clsx(
           "bg-background font-sans antialiased",
-          fontSans.variable
+          fontSans.variable,
         )}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>

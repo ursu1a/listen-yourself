@@ -2,7 +2,7 @@
 title: "Third post"
 date: "2024-12-12"
 excerpt: "Post short description lorem ipsum dolor sit amet consectetur adip repetent morbi tristique senectus et netus et malesuada"
-featuredImage: "/media/posts/post-3.jpg"
+featuredImage: "posts/post-3.jpg"
 ---
 
 Lorem ipsum dolor sit amet, consectetur adip minim veniam, sed do eiusmod tempor incididunt ut lab et dolore magna aliqua. Ut enim ad minim ven minim veniam et dolor

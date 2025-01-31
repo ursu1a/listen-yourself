@@ -5,6 +5,8 @@ import { container } from "../../shared/primitives";
 import { ContactForm } from "./ContactForm";
 import { ContactInfo } from "./ContactInfo";
 
+import { IMAGES_ROOT_DIR } from "@/lib/constants";
+
 export const Contact = () => {
   return (
     <section id="contact">
@@ -17,7 +19,7 @@ export const Contact = () => {
                 className="animate-block-in"
                 classNames={{ wrapper: "bg-center bg-cover" }}
                 fallbackSrc="/default-fallback-image.png"
-                src="/contact-banner.jpg"
+                src={`${IMAGES_ROOT_DIR}contact-banner.jpg`}
               />
             </div>
             <div className="border-b-1 border-default-400 lg:border-b-0 pb-6 pb-lg-0 lg:w-1/2">

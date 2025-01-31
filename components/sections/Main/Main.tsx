@@ -4,7 +4,7 @@ import { Button, Link } from "@heroui/react";
 import { Achievements } from "@/components/sections/Main/Achievements";
 import { title, button, container } from "@/components/shared/primitives";
 import { siteConfig } from "@/config/site";
-import Banner from "@/public/Banner.svg";
+import Banner from "@/public/images/Banner.svg";
 
 export const Main = () => {
   const mainImage = (
@@ -17,7 +17,7 @@ export const Main = () => {
 
   return (
     <section>
-      <div className={container({ className: "relative lg:pt-8" })}>
+      <div className={container({ className: "relative pt-5 lg:pt-8" })}>
         <div className="flex xl:items-center flex-col gap-y-4 lg:flex-row">
           <div className="lg:hidden -mt-[1.5rem]">{mainImage}</div>
           <div className="lg:w-1/2 xl:pt-24">

@@ -2,7 +2,7 @@
 title: "Second post"
 date: "2024-06-10"
 excerpt: "Post short description linked to the second post in the second post"
-featuredImage: "/media/posts/default-image.jpg"
+featuredImage: "posts/default-image.jpg"
 ---
 
 Lorem ipsum dolor sit amet, consectetur adip minim veniam, sed do eiusmod tempor incididunt ut lab et dolore magna aliqua. Ut enim ad minim ven minim veniam et dolor

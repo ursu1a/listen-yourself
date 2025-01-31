@@ -8,7 +8,6 @@ import { siteConfig as strings } from "@/config/site";
 import { PostsHeader } from "@/components/blog/PostsHeader";
 import { container } from "@/components/shared/primitives";
 
-
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title: strings.blog.root,
