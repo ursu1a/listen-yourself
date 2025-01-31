@@ -4,3 +4,13 @@
 @tailwind utilities;
 
 @import "blog.css";
+
+@layer utilities {
+  [class*="overflow-"] {
+    @apply scrollbar-thin scrollbar-track-default-200 scrollbar-thumb-default-500;
+  }
+}
+
+mark {
+   @apply bg-blue-500 text-white;
+}

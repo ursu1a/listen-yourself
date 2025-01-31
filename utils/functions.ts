@@ -27,10 +27,32 @@ export function calculateReadingTime(content: string): number {
   return Math.ceil(words / wordsPerMinute); // Ceil reading time for minutes
 }
 
+export function getSnippet(
+  content: string,
+  query: string,
+  length: number = 200,
+) {
+  const index = content.toLowerCase().indexOf(query.toLowerCase());
+
+  if (index === -1) return content.slice(0, length) + "...";
+
+  const start = Math.max(0, index - 30); // Get 30 symbols before word
+  const end = Math.min(content.length, index + length);
+
+  return "..." + content.slice(start, end) + "...";
+}
+
+export function highlightMatch(text: string, query: string) {
+  if (!query) return text;
+  const regex = new RegExp(`(${query})`, "gi");
+
+  return text.replace(regex, `<mark>$1</mark>`);
+}
+
 export function getErrorMessage(
   messages: Record<string, string>,
   errors: Record<string, any>,
-  key: string
+  key: string,
 ): string {
   return messages[errors[key]?.message] || "";
 }

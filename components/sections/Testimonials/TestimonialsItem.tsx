@@ -7,6 +7,7 @@ import ReactStars from "react-stars";
 import { button } from "@/components/shared/primitives";
 import { ITestimonial } from "@/types/index";
 import { siteConfig } from "@/config/site";
+import { IMAGES_ROOT_DIR } from "@/lib/constants";
 
 type TestimonialProps = {
   item: ITestimonial;
@@ -26,7 +27,7 @@ export const TestimonialsItem = ({ item, className }: TestimonialProps) => {
           }}
           radius="md"
           shadow="lg"
-          src={item.image}
+          src={`${IMAGES_ROOT_DIR}${item.image}`}
           width="100%"
         />
       </div>

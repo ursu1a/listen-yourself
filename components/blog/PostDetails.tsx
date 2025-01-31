@@ -7,6 +7,7 @@ import { CalendarIcon, ViewIcon } from "../shared/icons";
 import { IPost } from "@/types";
 import { siteConfig as strings } from "@/config/site";
 import { formatDate } from "@/utils/functions";
+import { IMAGES_ROOT_DIR } from "@/lib/constants";
 
 export type PostDetailsProps = {
   post: IPost;
@@ -46,7 +47,7 @@ export const PostDetails = async ({ post }: PostDetailsProps) => {
           className="w-full h-[150px] lg:h-[300px] object-cover"
           radius="sm"
           shadow="sm"
-          src={post.featuredImage}
+          src={`${IMAGES_ROOT_DIR}${post.featuredImage}`}
         />
         {postHeader(post)}
         <div

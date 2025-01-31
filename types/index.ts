@@ -43,3 +43,9 @@ export interface IPost {
   readTime?: number;
   views: number;
 }
+
+export interface SearchResult {
+  title: string;
+  url: string;
+  snippet: string;
+}

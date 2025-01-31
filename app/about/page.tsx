@@ -1,9 +1,5 @@
-import { title } from "@/components/shared/primitives";
+import { container } from "@/components/shared/primitives";
 
 export default function AboutPage() {
-  return (
-    <div>
-      <h1 className={title()}>About</h1>
-    </div>
-  );
+  return <div className={container()}>About Page</div>;
 }

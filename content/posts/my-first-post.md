@@ -2,7 +2,7 @@
 title: "First Post"
 date: "2023-12-12"
 excerpt: "Excerpt of first post"
-featuredImage: "/media/posts/default-image.jpg"
+featuredImage: "posts/default-image.jpg"
 ---
 
 ## Header 2-1

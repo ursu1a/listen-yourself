@@ -2,6 +2,7 @@ import { Card, CardFooter, Image } from "@heroui/react";
 import Link from "next/link";
 
 import { IGalleryItem } from "@/types";
+import { IMAGES_ROOT_DIR } from "@/lib/constants";
 
 export type GalleryItemProps = {
   item: IGalleryItem;
@@ -15,9 +16,9 @@ export const GalleryItem = ({ item }: GalleryItemProps) => {
           alt={item.alt}
           className="gallery-item h-96 object-cover transition-transform duration-300 group-hover:scale-105"
           classNames={{ wrapper: "bg-top bg-cover" }}
-          fallbackSrc="/default-fallback-image.png"
+          fallbackSrc={`${IMAGES_ROOT_DIR}default-fallback-image.png`}
           radius="none"
-          src={item.image}
+          src={`${IMAGES_ROOT_DIR}${item.image}`}
           width="100%"
         />
         <CardFooter className="absolute text-center bottom-0 w-full h-2/3 z-10 flex flex-col justify-end items-center text-white pb-3 lg:pb-8 bg-gradient-to-t from-black/90 via-black/50 to-transparent">

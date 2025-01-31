@@ -1,6 +1,2 @@
 @import "navbar.css";
 @import "images.css";
-
-html {
-   scroll-behavior: smooth;
-}

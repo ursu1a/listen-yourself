@@ -1,9 +1,5 @@
-import { title } from "@/components/shared/primitives";
+import { container } from "@/components/shared/primitives";
 
 export default function PricingPage() {
-  return (
-    <div>
-      <h1 className={title()}>Pricing</h1>
-    </div>
-  );
+  return <div className={container()}>Pricing Page</div>;
 }

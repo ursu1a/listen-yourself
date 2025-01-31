@@ -80,6 +80,10 @@ export const siteConfig = {
     },
     back_home: "Back to Home",
   },
+  search: {
+    placeholder: "Search...",
+    no_search_results: "No results for ",
+  },
   main: {
     title: "Listen to yourself Follow your heart",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus in libero risus semper habitant arcu eget. Et integer facilisi eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus in libero risus semper habitant arcu eget. Et integer facilisi eget.",
@@ -114,6 +118,7 @@ export const siteConfig = {
   },
   blog: {
     root: "Blog",
+    home: "Home",
     title: "Blog",
     description: "Explore our insights",
     no_posts_found: "No posts found",
@@ -122,6 +127,12 @@ export const siteConfig = {
     reads: "reads",
     post_doesnt_exist: "Post does not exist",
     back_blog: "Back to Blog",
+  },
+  about: {
+    title: "About",
+  },
+  pricing: {
+    title: "Pricing",
   },
   footer: {
     aboutTitle: "About me",

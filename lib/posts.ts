@@ -49,7 +49,7 @@ export const getAllPosts = async (): Promise<IPost[] | null> => {
     });
 
     return posts.sort((a, b) =>
-      compareDesc(new Date(a.date), new Date(b.date))
+      compareDesc(new Date(a.date), new Date(b.date)),
     );
   } catch (error) {
     /* eslint-disable no-console */
