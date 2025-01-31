@@ -5,6 +5,8 @@ import { PostDetails } from "@/components/blog/PostDetails";
 import { getAllPosts, getPostBySlug, incrementViews } from "@/lib/posts";
 import { IMAGES_ROOT_DIR } from "@/lib/constants";
 
+export const runtime = "edge";
+
 type PostProps = {
   params: Promise<{ slug: string }>;
 };
