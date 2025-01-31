@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { Metadata } from "next";
 
 import { PostDetails } from "@/components/blog/PostDetails";
-import { getPostBySlug, incrementViews } from "@/lib/posts";
+import { getAllPosts, getPostBySlug, incrementViews } from "@/lib/posts";
 import { IMAGES_ROOT_DIR } from "@/lib/constants";
 
 type PostProps = {
@@ -30,13 +30,13 @@ export async function generateMetadata({
   };
 }
 
-/*// Static posts pages generation
+// Static posts pages generation
 export async function generateStaticParams() {
   const posts = await getAllPosts();
 
   return posts ? posts.map((post) => ({ slug: post.slug })) : [];
 }
-*/
+
 export default async function PostPage({ params }: PostProps) {
   const { slug } = await params;
   const post = await getPostBySlug(slug);
