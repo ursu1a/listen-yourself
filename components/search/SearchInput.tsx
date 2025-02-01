@@ -1,5 +1,5 @@
 "use client";
-import { Input, Kbd, useDisclosure } from "@heroui/react";
+import { Button, Input, Kbd, useDisclosure } from "@heroui/react";
 import { useEffect } from "react";
 
 import { SearchModal } from "./SearchModal";
@@ -47,26 +47,38 @@ export const SearchInput = ({
   return (
     <>
       <SearchModal mobile={isMobile} open={isOpen} onClose={onSearchEnd} />
-      <Input
-        isReadOnly
-        aria-label="Search"
-        classNames={{
-          inputWrapper: "bg-default-100 text-default",
-          input: "text-sm",
-        }}
-        endContent={
-          <Kbd className="hidden lg:inline-block" keys={["command"]}>
-            K
-          </Kbd>
-        }
-        labelPlacement="outside"
-        placeholder={strings.search.placeholder}
-        startContent={
-          <SearchIcon className="text-base text-default-400 pointer-events-none flex-shrink-0" />
-        }
-        type="search"
-        onClick={onSearchStart}
-      />
+      {isMobile ? (
+        <Button
+          isIconOnly
+          aria-label="search"
+          className="w-auto h-auto min-w-auto min-h-auto"
+          variant="light"
+          onPress={onSearchStart}
+        >
+          <SearchIcon size={19} />
+        </Button>
+      ) : (
+        <Input
+          isReadOnly
+          aria-label="Search"
+          classNames={{
+            inputWrapper: "bg-default-100 text-default",
+            input: "text-sm",
+          }}
+          endContent={
+            <Kbd className="hidden lg:inline-block" keys={["command"]}>
+              K
+            </Kbd>
+          }
+          labelPlacement="outside"
+          placeholder={strings.search.placeholder}
+          startContent={
+            <SearchIcon className="text-base text-default-400 pointer-events-none flex-shrink-0" />
+          }
+          type="search"
+          onClick={onSearchStart}
+        />
+      )}
     </>
   );
 };
