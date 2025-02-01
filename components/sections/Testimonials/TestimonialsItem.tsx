@@ -23,7 +23,7 @@ export const TestimonialsItem = ({ item, className }: TestimonialProps) => {
           classNames={{
             wrapper:
               "ring-4 lg:ring-8 ring-white bg-slate-300 dark:bg-default-100",
-            img: "testimonial-image object-cover",
+            img: "object-cover w-[150px] h-[150px] lg:w-[230px] lg:h-[200px]",
           }}
           radius="md"
           shadow="lg"

@@ -14,7 +14,7 @@ export const GalleryItem = ({ item }: GalleryItemProps) => {
       <Card className="relative cursor-pointer group" radius="none" shadow="lg">
         <Image
           alt={item.alt}
-          className="gallery-item h-96 object-cover transition-transform duration-300 group-hover:scale-105"
+          className="object-cover h-[150px] lg:h-[380px] transition-transform duration-300 group-hover:scale-105"
           classNames={{ wrapper: "bg-top bg-cover" }}
           fallbackSrc={`${IMAGES_ROOT_DIR}default-fallback-image.png`}
           radius="none"

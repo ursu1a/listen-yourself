@@ -52,7 +52,7 @@ export const Navbar = () => {
       >
         <NavbarBrand className="max-w-fit">
           <NextLink aria-label={siteConfig.name} href="/">
-            <LogoIcon className="logo" />
+            <LogoIcon className="w-[30px] -ml-[3px] lg:w-[50px] lg:ml-0" />
           </NextLink>
         </NavbarBrand>
         <ul className="hidden lg:flex gap-4 justify-start ml-2">
