@@ -109,7 +109,7 @@ export const Navbar = () => {
         <Link isExternal aria-label="Github" href={siteConfig.links.telegram}>
           <TelegramIcon className="text-default-500" />
         </Link>
-        <SearchInput isMobile handleSearchClose={setMenuOpen} />
+        <SearchInput isMobile />
         <NavbarMenuToggle />
       </NavbarContent>
 

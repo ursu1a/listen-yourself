@@ -9,13 +9,9 @@ import { siteConfig as strings } from "@/config/site";
 
 export type SearchInputProps = {
   isMobile?: boolean;
-  handleSearchClose?: () => void;
 };
 
-export const SearchInput = ({
-  isMobile,
-  handleSearchClose,
-}: SearchInputProps) => {
+export const SearchInput = ({ isMobile }: SearchInputProps) => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   useEffect(() => {
@@ -38,9 +34,6 @@ export const SearchInput = ({
   };
 
   const onSearchEnd = () => {
-    if (handleSearchClose) {
-      handleSearchClose();
-    }
     onOpenChange();
   };
 
@@ -51,11 +44,11 @@ export const SearchInput = ({
         <Button
           isIconOnly
           aria-label="search"
-          className="w-auto h-auto min-w-auto min-h-auto"
+          className="w-auto h-auto min-w-auto min-h-auto text-default-500"
           variant="light"
           onPress={onSearchStart}
         >
-          <SearchIcon size={19} />
+          <SearchIcon size={20} />
         </Button>
       ) : (
         <Input
