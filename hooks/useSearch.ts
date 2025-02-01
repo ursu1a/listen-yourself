@@ -31,6 +31,7 @@ export const useSearch = () => {
 
   useEffect(() => {
     if (!query) {
+      setLoading(false);
       setResults([]);
 
       return;

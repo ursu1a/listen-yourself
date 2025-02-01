@@ -30,6 +30,8 @@ export const SearchModal = ({ mobile, open, onClose }: SearchModalProps) => {
       classNames={{
         closeButton: "top-5 lg:top-6 mr-2",
         header: "border-b-1 border-default-300",
+        base: "my-auto",
+        wrapper: "items-start h-auto",
       }}
       isDismissable={false}
       isOpen={open}

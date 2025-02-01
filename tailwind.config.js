@@ -71,6 +71,7 @@ const config = {
     require("@tailwindcss/typography"),
     require("tailwind-scrollbar")({
       nocompatible: true,
+      preferredStrategy: "pseudoelements",
     }),
   ],
 };

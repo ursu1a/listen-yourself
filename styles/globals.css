@@ -1,16 +1,23 @@
-@import "custom.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import "blog.css";
-
-@layer utilities {
-  [class*="overflow-"] {
-    @apply scrollbar-thin scrollbar-track-default-200 scrollbar-thumb-default-500;
+@layer base {
+  @import "blog.css";
+  mark {
+    @apply bg-blue-500 text-white;
   }
 }
 
-mark {
-   @apply bg-blue-500 text-white;
+@layer utilities {
+  :where(
+      [class~="overflow-auto"],
+      [class~="overflow-scroll"],
+      [class~="overflow-x-auto"],
+      [class~="overflow-x-scroll"],
+      [class~="overflow-y-auto"],
+      [class~="overflow-y-scroll"]
+    ) {
+    @apply scrollbar scrollbar-w-1.5 scrollbar-track-default-200 scrollbar-thumb-default-500 scrollbar-thumb-rounded-full;
+  }
 }
