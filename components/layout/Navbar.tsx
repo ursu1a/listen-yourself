@@ -109,11 +109,11 @@ export const Navbar = () => {
         <Link isExternal aria-label="Github" href={siteConfig.links.telegram}>
           <TelegramIcon className="text-default-500" />
         </Link>
+        <SearchInput isMobile />
         <NavbarMenuToggle />
       </NavbarContent>
 
       <NavbarMenu>
-        <SearchInput isMobile handleSearchClose={setMenuOpen} />
         <div className="mx-4 mt-2 flex flex-col gap-2">
           {siteConfig.navMenuItems.map((item, index) => (
             <NavbarMenuItem key={`${item}-${index}`}>
