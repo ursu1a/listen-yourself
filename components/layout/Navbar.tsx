@@ -55,7 +55,7 @@ export const Navbar = () => {
             <LogoIcon className="w-[30px] -ml-[3px] lg:w-[50px] lg:ml-0" />
           </NextLink>
         </NavbarBrand>
-        <ul className="hidden lg:flex gap-4 justify-start ml-2">
+        <ul className="hidden lg:flex gap-6 justify-start ml-2">
           {siteConfig.navItems.map((item) => (
             <NavbarItem key={item.href}>
               <NextLink
@@ -65,7 +65,6 @@ export const Navbar = () => {
                   "data-[active=true]:underline",
                   "data-[active=true]:underline-offset-8",
                 )}
-                color="foreground"
                 data-active={pathname.includes(item.href)}
                 href={item.href}
               >

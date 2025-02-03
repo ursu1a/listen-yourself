@@ -4,6 +4,6 @@
   }
 
   a {
-    @apply text-blue-600 underline hover:text-blue-800;
+    @apply underline underline-offset-1 text-blue-600 hover:text-blue-800 dark:text-default-500 dark:hover:text-default-800;
   }
 }
