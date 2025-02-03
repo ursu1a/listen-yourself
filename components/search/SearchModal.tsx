@@ -30,11 +30,12 @@ export const SearchModal = ({ mobile, open, onClose }: SearchModalProps) => {
       classNames={{
         closeButton: "top-5 lg:top-6 mr-2",
         header: "border-b-1 border-default-300",
-        base: "my-auto",
+        base: "my-auto lg:mt-36",
         wrapper: "items-start h-auto",
       }}
       isDismissable={false}
       isOpen={open}
+      placement="top"
       scrollBehavior="inside"
       size={mobile ? "full" : "3xl"}
       onOpenChange={onClose}
@@ -45,7 +46,8 @@ export const SearchModal = ({ mobile, open, onClose }: SearchModalProps) => {
             // eslint-disable-next-line jsx-a11y/no-autofocus
             autoFocus
             isClearable
-            classNames={{ base: "mr-7" }}
+            classNames={{ base: "mr-7", clearButton: "text-default-400" }}
+            id="search"
             placeholder={strings.search.placeholder}
             radius="sm"
             size="lg"
@@ -60,6 +62,7 @@ export const SearchModal = ({ mobile, open, onClose }: SearchModalProps) => {
             <Spinner classNames={{ base: "mt-2" }} color="current" />
           ) : (
             <Listbox
+              aria-labelledby="search"
               classNames={{ emptyContent: "py-0", list: "gap-1.5 lg:gap-1" }}
               emptyContent={
                 query && (
@@ -69,6 +72,7 @@ export const SearchModal = ({ mobile, open, onClose }: SearchModalProps) => {
                   </p>
                 )
               }
+              role="searchbox"
             >
               {results.map((result, index) => (
                 <ListboxItem
@@ -77,10 +81,12 @@ export const SearchModal = ({ mobile, open, onClose }: SearchModalProps) => {
                   href={result.url}
                   onPress={onClose}
                 >
-                  <p className="text-lg mb-1 text-blue-600">{result.title}</p>
+                  <p className="text-lg mb-1 text-blue-600 dark:text-default-500">
+                    {result.title}
+                  </p>
                   <p
                     dangerouslySetInnerHTML={{ __html: result.snippet }}
-                    className="text-sm text-default-700"
+                    className="text-sm text-default-700 tracking-wide"
                   />
                 </ListboxItem>
               ))}

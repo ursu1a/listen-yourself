@@ -43,8 +43,9 @@ export const SearchInput = ({ isMobile }: SearchInputProps) => {
       {isMobile ? (
         <Button
           isIconOnly
-          aria-label="search"
-          className="w-auto h-auto min-w-auto min-h-auto text-default-500"
+          aria-label="Search"
+          className="text-default-500"
+          size="sm"
           variant="light"
           onPress={onSearchStart}
         >
@@ -53,7 +54,7 @@ export const SearchInput = ({ isMobile }: SearchInputProps) => {
       ) : (
         <Input
           isReadOnly
-          aria-label="Search"
+          aria-label="search"
           classNames={{
             inputWrapper: "bg-default-100 text-default",
             input: "text-sm",
