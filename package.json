@@ -23,6 +23,7 @@
 		"framer-motion": "^12.0.5",
 		"fs": "^0.0.1-security",
 		"gray-matter": "^4.0.3",
+		"instafeed.js": "^2.0.0",
 		"lodash": "^4.17.21",
 		"next": "^15.1.6",
 		"next-sitemap": "^4.2.3",
@@ -44,6 +45,7 @@
 	"devDependencies": {
 		"@next/eslint-plugin-next": "15.0.4",
 		"@react-types/shared": "3.25.0",
+		"@types/instafeed.js": "^2.0.0",
 		"@types/node": "20.5.7",
 		"@types/nodemailer": "^6.4.17",
 		"@types/react": "18.3.3",

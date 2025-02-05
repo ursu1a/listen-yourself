@@ -71,4 +71,7 @@ export const container = tv({
   },
 });
 
-export const layout = tv({ base: "grid grid-cols-1 gap-y-24 lg:gap-y-44" });
+export const layout = tv({
+  base: "grid grid-cols-1 gap-y-24 lg:gap-y-44",
+  variants: { lowspace: { true: "gap-y-3 lg:gap-y-1" } },
+});

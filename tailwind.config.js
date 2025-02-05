@@ -16,8 +16,7 @@ const config = {
       },
       fontSize: {
         "6xl": "4rem",
-      },
-
+      },      
       animation: {
         "zoom-in": "zoomIn 1.5s ease-in-out forwards",
         "block-in": "scaleIn 0.8s ease-out forwards",
