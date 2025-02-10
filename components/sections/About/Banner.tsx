@@ -9,9 +9,9 @@ export const Banner = () => {
       <div className="absolute z-10 inset-0">
         <div className={container({ className: "flex items-center h-full" })}>
           <div className="flex flex-col space-y-4 text-white text-center lg:text-start lg:w-1/2 lg:ml-auto py-4">
-            <p className={title({ className: "lg:mb-4" })}>
+            <h1 className={title({ className: "lg:mb-4" })}>
               {strings.about.banner.title} 👋
-            </p>
+            </h1>
             <p className="lg:text-lg lg:leading-8 text-shadow">
               {strings.about.banner.text}
             </p>
