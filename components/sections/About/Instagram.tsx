@@ -32,7 +32,7 @@ export const Instagram = () => {
       accessToken,
       target: feedRef.current!,
       template: `
-       <a href="{{link}}" target="_blank" class="block">
+       <a href="{{link}}" target="_blank" class="block hover:grayscale">
          <img src="{{image}}" alt="{{caption}}" class="w-full h-auto shadow-md"/>
        </a>
      `,
@@ -45,13 +45,13 @@ export const Instagram = () => {
   return (
     <section>
       <div className={container()}>
-        <p
+        <h4
           className={subtitle({
             className: "text-center text-default-700 mb-6",
           })}
         >
           {strings.about.instagram.title}
-        </p>
+        </h4>
         <div ref={feedRef} className="grid grid-cols-2 lg:grid-cols-4 gap-3" />
       </div>
     </section>
