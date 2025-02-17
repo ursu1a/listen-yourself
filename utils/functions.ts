@@ -2,7 +2,7 @@ import { format, formatDuration } from "date-fns";
 
 import { emailValidator } from "./validators";
 
-export function getCurrentYear() {
+export function getCurrentYear(): number {
   var currentTime = new Date();
 
   return currentTime.getFullYear();

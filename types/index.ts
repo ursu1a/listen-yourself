@@ -49,3 +49,20 @@ export interface SearchResult {
   url: string;
   snippet: string;
 }
+
+export interface IPlan {
+  id: string;
+  name: string;
+  description: string;
+  cost: number;
+  period?: string;
+  popular?: boolean;
+  maxSessions?: number;
+}
+
+export interface IUserForm {
+  planId?: string;
+  name: string;
+  email: string;
+  dateTime?: string;
+}

@@ -5,7 +5,7 @@ import { layout } from "@/components/shared/primitives";
 
 export default function AboutPage() {
   return (
-    <div className={layout({})}>
+    <div className={layout()}>
       <div className="space-y-4">
         <Banner />
         <Story />
