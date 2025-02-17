@@ -43,7 +43,7 @@ export const PlanDetails = ({ plan }: { plan: IPlan }) => {
               <Button
                 disableAnimation
                 isIconOnly
-                className="p-1.5 -mx-2 -my-1.5 rounded-full"
+                className="p-1.5 -mx-2.5 -my-1.5 rounded-full"
                 variant="light"
                 onPress={() => setTooltipIsOpened(!tooltipIsOpened)}
               >
