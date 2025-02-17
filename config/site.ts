@@ -70,6 +70,10 @@ export const siteConfig = {
   common: {
     actions: {
       viewMore: "View More",
+      submit: "Submit",
+      cancel: "Cancel",
+      back: "Back",
+      welcome: "Welcome",
     },
     header: {
       sponsor: "Sponsor",
@@ -132,19 +136,80 @@ export const siteConfig = {
     banner: {
       title: "I'm author of this blog",
       text: "Since from 1999 year I've been working with this are being descibed of this blog. Feel free to contact with me to know more.",
-      read_blog: "Read the blog"
+      read_blog: "Read the blog",
     },
     story: {
       subtitle: "My story",
       title: "How did I learn about that?",
-      text: "<p>The first hikes I can remember are all with my dad. Growing up in California’s Central Valley, I was always just a couple hours away from either the beach or the mountains… and with Yosemite in our backyard, we chose the mountains.</p><p>My dad was wired for adventure and he wasn’t afraid of driving for 12 hours straight, several days in a row to set his eyes on the best views. By time I was in college, my adventures (and many roadtrips with my dad) had taken me across all 50 U.S. states. I’ll be forever grateful that he gave me the gift of seeing the beauty our world has to offer.<p><p>Looking for yourself in the state</p>"
+      text: "<p>The first hikes I can remember are all with my dad. Growing up in California’s Central Valley, I was always just a couple hours away from either the beach or the mountains… and with Yosemite in our backyard, we chose the mountains.</p><p>My dad was wired for adventure and he wasn’t afraid of driving for 12 hours straight, several days in a row to set his eyes on the best views. By time I was in college, my adventures (and many roadtrips with my dad) had taken me across all 50 U.S. states. I’ll be forever grateful that he gave me the gift of seeing the beauty our world has to offer.<p><p>Looking for yourself in the state</p>",
     },
     instagram: {
       title: "My popular posts on Intagram",
     },
   },
   pricing: {
-    title: "Pricing",
+    title: "Choose your better way that you can use for",
+    description:
+      "Find the best solution for you &mdash; 100% satisfaction garanteed.",
+    plans: [
+      {
+        id: "starter",
+        description:
+          "It would be enought for getting an answer for something is important for you",
+      },
+      {
+        id: "basic",
+        description:
+          "You could ask 3 different questions and you'll receive an answer for each of them",
+      },
+      {
+        id: "premium",
+        description:
+          "5 different sessions that you could use for receiving all that you needed. It should be used until 2 months",
+      },
+      {
+        id: "premium_plus",
+        description:
+          "10 different sessions and you should use them until next 3 months",
+      },
+    ],
+    choose: "Choose",
+    popular: "Popular",
+    form: {
+      title: "Please fill the form",
+      selectedPlanLabel: "You choosed a plan",
+      name: "Your name",
+      email: "Your e-mail",
+      next: "Next",
+      validators: {
+        name_required: "Name is required",
+        email_required: "Email is required",
+        email_format: "Email format is wrong",
+        time_slot_wrong: "Please select a time between 10:00 am until 9:00 pm",
+        date_3months_ahead:
+          "Please select a date not later than the current date plus 3 months",
+      },
+      responses: {
+        booking_success: "Your booking event has been created",
+        plan_not_found_error: "Plan not found",
+        max_sessions_limit_error: "The maximum number of sessions is reached",
+        time_slot_unavailable_error:
+          "This time slot is not available. Please try with different time slot.",
+        email_confirm_success:
+          "Please check your mailbox to confirm your booking",
+        email_confirm_error:
+          "Error with sending email. Please try again later or try another email address",
+      },
+    },
+    selectDate: {
+      title: "Please select a date",
+      label: "Appointment time",
+      hint: "Please select a date and time that will be comfortable to you",
+    },
+    calendarEvent: {
+      title: "Appointment with",
+      description: "Listen-Yourself event is planned for the plan",
+    },
   },
   footer: {
     aboutTitle: "About me",
