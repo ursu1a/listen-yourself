@@ -1,4 +1,13 @@
-import { Card, CardBody, CardHeader, Divider, Tooltip } from "@heroui/react";
+"use client";
+import { useState } from "react";
+import {
+  Button,
+  Card,
+  CardBody,
+  CardHeader,
+  Divider,
+  Tooltip,
+} from "@heroui/react";
 
 import { InfoIcon } from "../shared/icons";
 
@@ -6,6 +15,8 @@ import { IPlan } from "@/types";
 import { siteConfig as strings } from "@/config/site";
 
 export const PlanDetails = ({ plan }: { plan: IPlan }) => {
+  const [tooltipIsOpened, setTooltipIsOpened] = useState(false);
+
   return (
     <Card
       classNames={{
@@ -24,10 +35,20 @@ export const PlanDetails = ({ plan }: { plan: IPlan }) => {
             <Tooltip
               classNames={{ base: "w-72", content: "p-3" }}
               content={plan.description}
+              isOpen={tooltipIsOpened}
+              offset={0}
               placement="bottom"
               radius="sm"
             >
-              <InfoIcon className="mt-1" size={18} />
+              <Button
+                disableAnimation
+                isIconOnly
+                className="p-1.5 -mx-2.5 -my-1.5 rounded-full"
+                variant="light"
+                onPress={() => setTooltipIsOpened(!tooltipIsOpened)}
+              >
+                <InfoIcon size={18} />
+              </Button>
             </Tooltip>
           </div>
           <div className="text-end">
