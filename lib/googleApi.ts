@@ -55,6 +55,7 @@ const signInWithGoogle = async (): Promise<ApiResponse> => {
 
     const user = await authInstance.signIn();
 
+    window.focus();
     console.log("User authorized: ", user.getBasicProfile().getEmail());
 
     return {
