@@ -9,7 +9,7 @@ import {
   GOOGLE_CLIENT_ID,
 } from "./constants";
 
-import { IPlan, IUserForm } from "@/types";
+import { ApiResponse, IPlan, IUserForm } from "@/types";
 import { siteConfig as strings } from "@/config/site";
 
 const SCOPE = "https://www.googleapis.com/auth/calendar.events";
@@ -36,10 +36,9 @@ const loadGoogleAPI = () => {
   });
 };
 
-const signInWithGoogle = async () => {
+const signInWithGoogle = async (): Promise<ApiResponse> => {
   try {
     if (!gapi.auth2) {
-      console.error("Google API not available");
       await loadGoogleAPI();
     }
 
@@ -48,18 +47,27 @@ const signInWithGoogle = async () => {
     if (!authInstance) {
       console.error("Error: Google Auth not initialized.");
 
-      return;
+      return {
+        success: false,
+        message: strings.pricing.form.responses.google_auth_error,
+      };
     }
 
     const user = await authInstance.signIn();
 
     console.log("User authorized: ", user.getBasicProfile().getEmail());
 
-    return user;
+    return {
+      success: true,
+      message: `${strings.pricing.form.responses.google_auth_success} ${user.getBasicProfile().getEmail()}`,
+    };
   } catch (error) {
     console.error("Authorization error: ", error);
 
-    return null;
+    return {
+      success: false,
+      message: `${strings.pricing.form.responses.google_auth_error}`,
+    };
   }
 };
 
