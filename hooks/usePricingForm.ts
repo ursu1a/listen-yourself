@@ -23,9 +23,9 @@ const schema = () =>
   });
 
 export const usePricingForm = () => {
+  const schemaInstance = schema();
   const [loading, setLoading] = useState(false);
   const [googleApi, setGoogleApi] = useState<any>();
-  const schemaInstance = schema();
 
   const {
     register,
@@ -78,7 +78,13 @@ export const usePricingForm = () => {
           return validators["time_slot_wrong"];
         }
 
-        const plus3MonthDate = add(new Date(), { months: 3 });
+        const tomorrowDate = add(Date.now(), { days: 1 }).setHours(9, 59, 59);
+
+        if (isBefore(jsDate, tomorrowDate)) {
+          return validators["date_earlier_tomorrow"];
+        }
+
+        const plus3MonthDate = add(Date.now(), { months: 3 });
 
         if (isAfter(jsDate, plus3MonthDate)) {
           return validators["date_3months_ahead"];
@@ -110,7 +116,7 @@ export const usePricingForm = () => {
   const sendEmailConfirmation = async (
     userData: IUserForm,
     plan: IPlan,
-    eventLink: string,
+    eventLink: string
   ): Promise<ApiResponse> => {
     try {
       const requestData = {

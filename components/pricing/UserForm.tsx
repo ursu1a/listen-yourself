@@ -56,8 +56,14 @@ export const UserForm = ({ open, plan, onClose }: UserFormProps) => {
   const dateError = useMemo(() => validateDateTime(date), [date]);
 
   const onNextClick = async () => {
-    await googleApi.signInWithGoogle();
-    setIsUserSubmitted(true);
+    const result = await googleApi.signInWithGoogle();
+
+    if (result.success) {
+      setIsUserSubmitted(true);
+    }
+    enqueueSnackbar(result.message, {
+      variant: result.success ? "success" : "error",
+    });
   };
 
   const onSubmit = async () => {
@@ -169,6 +175,7 @@ export const UserForm = ({ open, plan, onClose }: UserFormProps) => {
                   />
                   <Input
                     {...register("email")}
+                    description={strings.pricing.form.email_hint}
                     errorMessage={getErrorMessage(validators, errors, "email")}
                     isInvalid={!!errors.email}
                     label={strings.pricing.form.email}

@@ -180,6 +180,7 @@ export const siteConfig = {
       selectedPlanLabel: "You choosed a plan",
       name: "Your name",
       email: "Your e-mail",
+      email_hint: "Google authorization is been required",
       next: "Next",
       validators: {
         name_required: "Name is required",
@@ -188,6 +189,7 @@ export const siteConfig = {
         time_slot_wrong: "Please select a time between 10:00 am until 9:00 pm",
         date_3months_ahead:
           "Please select a date not later than the current date plus 3 months",
+        date_earlier_tomorrow: "Please select a date not later than tomorrow",
       },
       responses: {
         booking_success: "Your booking event has been created",
@@ -195,6 +197,8 @@ export const siteConfig = {
         max_sessions_limit_error: "The maximum number of sessions is reached",
         time_slot_unavailable_error:
           "This time slot is not available. Please try with different time slot.",
+        google_auth_error: "Google Auth is not initialized.",
+        google_auth_success: "You authorized as",
         email_confirm_success:
           "Please check your mailbox to confirm your booking",
         email_confirm_error:
