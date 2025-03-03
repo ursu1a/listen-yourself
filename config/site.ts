@@ -197,7 +197,7 @@ export const siteConfig = {
         max_sessions_limit_error: "The maximum number of sessions is reached",
         time_slot_unavailable_error:
           "This time slot is not available. Please try with different time slot.",
-        google_auth_error: "Google Auth is not initialized.",
+        google_auth_error: "Google Account does not authorized.",
         google_auth_success: "You authorized as",
         email_confirm_success:
           "Please check your mailbox to confirm your booking",

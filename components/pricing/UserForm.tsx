@@ -19,6 +19,7 @@ import { siteConfig as strings } from "@/config/site";
 import { IPlan } from "@/types";
 import { usePricingForm } from "@/hooks/usePricingForm";
 import { getErrorMessage } from "@/utils/functions";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 type UserFormProps = {
   open: boolean;
@@ -45,6 +46,7 @@ export const UserForm = ({ open, plan, onClose }: UserFormProps) => {
   const { validators } = strings.pricing.form;
   const [isUserSubmitted, setIsUserSubmitted] = useState(false);
   const [date, setDate] = useState<any>();
+  const isMobile = useIsMobile();
   const { enqueueSnackbar } = useSnackbar();
 
   useEffect(() => {
@@ -105,7 +107,7 @@ export const UserForm = ({ open, plan, onClose }: UserFormProps) => {
       }}
       isDismissable={false}
       isOpen={open}
-      size="4xl"
+      size={isMobile ? "5xl" : "4xl"}
       onOpenChange={onClose}
     >
       <ModalContent>
@@ -128,6 +130,7 @@ export const UserForm = ({ open, plan, onClose }: UserFormProps) => {
                     description={strings.pricing.selectDate.hint}
                     errorMessage={dateError}
                     granularity="minute"
+                    hourCycle={24}
                     isDateUnavailable={checkDateUnavailable}
                     isInvalid={!!dateError}
                     label={strings.pricing.selectDate.label}
@@ -159,7 +162,7 @@ export const UserForm = ({ open, plan, onClose }: UserFormProps) => {
             </ModalFooter>
           </>
         ) : (
-          <form onSubmit={handleSubmit(onNextClick)}>
+          <form className="flex flex-col" onSubmit={handleSubmit(onNextClick)}>
             <ModalHeader>{strings.pricing.form.title}</ModalHeader>
             <ModalBody>
               <div className="flex flex-col items-stretch lg:items-start lg:flex-row gap-4 lg:gap-x-5">
