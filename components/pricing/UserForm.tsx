@@ -103,7 +103,7 @@ export const UserForm = ({ open, plan, onClose }: UserFormProps) => {
         base: "dark:bg-default-100",
         header: "py-6",
         body: "pt-0 pb-6",
-        footer: "gap-4 py-6 justify-between lg:justify-end",
+        footer: "gap-4 py-6 justify-between lg:justify-end mt-20 lg:mt-0",
       }}
       isDismissable={false}
       isOpen={open}
@@ -124,6 +124,8 @@ export const UserForm = ({ open, plan, onClose }: UserFormProps) => {
                     <span>{`${getValues("name")} <${getValues("email")}>`}</span>
                   </p>
                   <DatePicker
+                    // eslint-disable-next-line jsx-a11y/no-autofocus
+                    autoFocus
                     shouldForceLeadingZeros
                     showMonthAndYearPickers
                     classNames={{ helperWrapper: "" }}
@@ -134,6 +136,10 @@ export const UserForm = ({ open, plan, onClose }: UserFormProps) => {
                     isDateUnavailable={checkDateUnavailable}
                     isInvalid={!!dateError}
                     label={strings.pricing.selectDate.label}
+                    popoverProps={{
+                      placement: isMobile ? "top-start" : "bottom-start",
+                      offset: 10,
+                    }}
                     size="lg"
                     variant="bordered"
                     onChange={setDate}
