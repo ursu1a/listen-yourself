@@ -4,6 +4,7 @@
 
 :root {
   --tw-shadow-color: #726f6f;
+  text-size-adjust: none;
 }
 
 @layer base {
