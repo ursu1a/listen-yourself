@@ -27,9 +27,11 @@ import {
   DiscordIcon,
   LogoIcon,
 } from "@/components/shared/icons";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 export const Navbar = () => {
   const pathname = usePathname();
+  const isMobile = useIsMobile();
   const [menuOpen, setMenuOpen] = useReducer((current) => !current, false);
 
   useEffect(() => {
@@ -42,6 +44,7 @@ export const Navbar = () => {
     <NextUINavbar
       className="navbar"
       height="4rem"
+      isBlurred={!isMobile}
       isMenuOpen={menuOpen}
       maxWidth="full"
       position="sticky"
@@ -115,7 +118,7 @@ export const Navbar = () => {
       </NavbarContent>
 
       <NavbarMenu>
-        <div className="mx-4 mt-2 flex flex-col h-full gap-4">
+        <div className="mx-4 mt-5 flex flex-col h-full gap-4">
           {siteConfig.navMenuItems.map((item, index) => (
             <NavbarMenuItem key={`${item}-${index}`}>
               <Link
@@ -128,7 +131,7 @@ export const Navbar = () => {
               </Link>
             </NavbarMenuItem>
           ))}
-          <div className="mt-auto mb-10">
+          <div className="mt-10">
             <SocialLinks />
           </div>
         </div>
