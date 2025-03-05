@@ -15,6 +15,8 @@ import clsx from "clsx";
 import { usePathname } from "next/navigation";
 import { useEffect, useReducer } from "react";
 
+import { SocialLinks } from "../ui/SocialLinks";
+
 import { SponsorButton } from "@/components/ui/SponsorButton";
 import { SearchInput } from "@/components/search/SearchInput";
 import { siteConfig } from "@/config/site";
@@ -113,17 +115,11 @@ export const Navbar = () => {
       </NavbarContent>
 
       <NavbarMenu>
-        <div className="mx-4 mt-2 flex flex-col gap-2">
+        <div className="mx-4 mt-2 flex flex-col h-full gap-4">
           {siteConfig.navMenuItems.map((item, index) => (
             <NavbarMenuItem key={`${item}-${index}`}>
               <Link
-                color={
-                  index === 2
-                    ? "primary"
-                    : index === siteConfig.navMenuItems.length - 1
-                      ? "danger"
-                      : "foreground"
-                }
+                color="foreground"
                 href={item.href}
                 size="lg"
                 onPress={setMenuOpen}
@@ -132,6 +128,9 @@ export const Navbar = () => {
               </Link>
             </NavbarMenuItem>
           ))}
+          <div className="mt-auto mb-10">
+            <SocialLinks />
+          </div>
         </div>
       </NavbarMenu>
     </NextUINavbar>

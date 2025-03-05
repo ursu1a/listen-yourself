@@ -1,12 +1,8 @@
 import { useMemo } from "react";
 import { Link } from "@heroui/react";
 
-import {
-  FacebookIcon,
-  LinkedinIcon,
-  InstagramIcon,
-  TwitterIcon,
-} from "@/components/shared/icons";
+import { SocialLinks } from "../ui/SocialLinks";
+
 import { container, subtitle } from "@/components/shared/primitives";
 import { siteConfig } from "@/config/site";
 import { getCurrentYear } from "@/utils/functions";
@@ -16,7 +12,7 @@ export const Footer = () => {
     () => [
       {
         title: "Individual Consultations",
-        url: "/",
+        url: "/#contact",
       },
       {
         title: "Workshops",
@@ -28,33 +24,7 @@ export const Footer = () => {
       },
       {
         title: "Resources",
-        url: "/",
-      },
-    ],
-    [],
-  );
-
-  const socialLinks = useMemo(
-    () => [
-      {
-        icon: FacebookIcon,
-        label: "Facebook",
-        url: siteConfig.links.facebook,
-      },
-      {
-        icon: TwitterIcon,
-        label: "Twitter",
-        url: siteConfig.links.twitter,
-      },
-      {
-        icon: LinkedinIcon,
-        label: "LinkedIn",
-        url: siteConfig.links.linkedin,
-      },
-      {
-        icon: InstagramIcon,
-        label: "Insagram",
-        url: siteConfig.links.instagram,
+        url: "/about",
       },
     ],
     [],
@@ -89,19 +59,7 @@ export const Footer = () => {
               <p className={subtitle({ className: "font-semibold mb-4" })}>
                 {siteConfig.footer.connect}
               </p>
-              <ul className="flex items-center gap-x-6">
-                {socialLinks.map(({ icon: Icon, url, label }) => (
-                  <li key={label}>
-                    <Link
-                      aria-label={label}
-                      className="py-1 text-default-400"
-                      href={url}
-                    >
-                      <Icon />
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+              <SocialLinks isFooter />
             </div>
           </div>
         </div>

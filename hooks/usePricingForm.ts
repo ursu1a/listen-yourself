@@ -116,7 +116,7 @@ export const usePricingForm = () => {
   const sendEmailConfirmation = async (
     userData: IUserForm,
     plan: IPlan,
-    eventLink: string
+    eventLink: string,
   ): Promise<ApiResponse> => {
     try {
       const requestData = {
